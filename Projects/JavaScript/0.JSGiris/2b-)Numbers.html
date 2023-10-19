@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let val;
+
+        // val = Number('10');
+
+        // val = parseInt('10');
+
+        // val = parseFloat('10.5');
+
+        //val = parseInt('a10a');
+
+        // val = isNaN('10');    // numara olup olmadıını öğrenir.
+
+
+
+
+        // toPrecision() 
+
+        //noktaya bakılmaksızın sayıları baştan parantez içerisine yazdığımız rakam kadar alır. 
+        //Örneğin 10.312321 değerini .toPrecision(4) yazarsak 10.31 olarak alır.
+
+        var num = 10.12456789;
+        val = num.toPrecision(5);
+
+
+        //toFixed // Virgülden sonraki basamaklara etki eder. Örneğin 10.321312 sayısını .toFixed(4) yaparsak. 10.3213 olarak alır.
+
+        val = num.toFixed(2);
+
+
+        // Math Metodu
+
+        val = Math.PI;
+        val = Math.round(2.4); // Round 0.5 den üstünü yukarı altını aşağı yuvarlar.
+        val = Math.round(2.6);
+        val = Math.ceil(2.4); // Math.ceil() Herzman yukarı yuvarlar
+        val = Math.floor(2.8); // Math.floor() her zaman aşağı yuvarlar.
+        val = Math.sqrt(64); // Math.sqrt() Karekökünü alır.
+        val = Math.pow(2, 4); //burda iki üzeri dördü hesaplar.
+        val = Math.abs(-100); // Mutlak değerini alır.  - Sayıyı pozitife çevirir. Vereceği sonuç 100 dür. 
+        val = Math.min(1, 2, 3, 4, 5, 6, 7); // En küçük Sayıyı verir. Burada 1 verecektir.
+        val = Math.max(3, 5, 312, 41); // En büyük sayıyı verir.
+        val = Math.random();
+        // 0 ve 1 arasında random bir sayı verir. Biz bu sayıyı arttırmak istiyorsak. Math.random()*10 gibi yapabiliriz. Bu 0 ile 9 arasında random bir sayı verir.
+        // Sayıları virgüllü verceği için yuvarla methodu ile birlikte kullanabiliriz. 
+
+        val = Math.round(Math.random() * 100); // Bu bir örnekti 1 ile 100 arasında bir sayı verir.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        console.log(val);
+        console.log(typeof val);
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

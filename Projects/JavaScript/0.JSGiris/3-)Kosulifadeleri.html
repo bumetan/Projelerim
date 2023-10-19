@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //if else statements 
+
+
+
+        let brand = prompt('Please Enter a Brand : ');
+        let model = prompt('Please Enter a Model : ');
+        let gear = prompt('Please Enter a Gear : ');
+
+        if ((brand == 'Opel') && (model == 'Corsa')) {
+            alert('Nice Car');
+        } else if (brand == 'Volvo' || brand == 'Honda') {
+            alert('Nice Car');
+        } else {
+            alert('Change This Car');
+        }
+
+        // switch STATEMENS
+
+        /* switch(ifade) {
+            case a:
+        // a kod bloğu
+            break;
+            case b:
+             // b kod bloğu
+             break;
+            default:
+    // varsayılan kod bloğu
+}
+*/
+
+        switch (gear) {
+            case 'automatic':
+                alert('This car is automatic');
+                break;
+            case 'manuel':
+                alert('This car is manuel');
+                break;
+            default:
+                alert('Yanlış Değer Girildi.');
+        }
+
+        alert('This car is : '+model+' model and '+brand+' brand and '+ gear+'.')
+
+        
+    </script>
+</body>
+
+
+
+
+
+</html>

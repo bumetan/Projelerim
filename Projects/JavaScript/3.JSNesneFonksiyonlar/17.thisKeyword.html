@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //ES5
+        let list1 = {
+            category: "phone",
+            names: ["Apple,Samsung,Huawei"],
+            call: function() {
+                let self = this;
+                this.names.map(function(name) {
+                    console.log(`${self.category} ${name}`)
+                })
+            }
+        }
+        list1.call();
+
+
+        //ES6
+        let list2 = {
+            category: "phone",
+            names: ["Apple,Samsung,Huawei"],
+            call: function() {
+                this.names.map((name) => {
+                    console.log(`${this.category} ${name}`)
+                })
+            }
+        }
+        list2.call();
+
+        //ES5
+        function Game() {
+            this.live = 0;
+            this.addLive = function() {
+                var self = this;
+                this.OneUp = setInterval(function() {
+                    console.log(++self.live);
+                }, 1000)
+            }
+        }
+
+        let player = new Game();
+        player.addLive();
+
+        //ES6
+        function Game2() {
+            this.live = 0;
+            this.addLive = function() {
+                this.OneUp = setInterval(() => {
+                    console.log(++this.live);
+                }, 1000)
+            }
+        }
+
+        let player2 = new Game2();
+        player2.addLive();
+    </script>
+
+</body>
+
+</html>

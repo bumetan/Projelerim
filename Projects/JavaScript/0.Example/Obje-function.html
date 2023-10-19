@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function paket(sigara, adet, renk, uzunluk, fiyat,paketfiyati) {
+
+            this.sigara = sigara;
+            this.adet = adet;
+            this.renk = renk;
+            this.uzunluk = uzunluk;
+            this.fiyat = fiyat;
+            this.paketfiyati = paketfiyatiHesapla(this);
+        }
+
+        function paketfiyatiHesapla(obj) {
+            return obj.adet * obj.fiyat;
+        }
+
+
+        let ikincisigaram = new paket("Parlament", 10, "Beyaz", "3cm", 25,paketfiyatiHesapla);
+        let sonsigaram = new paket("Malboro",15,"Kırmızı",13)
+
+        console.log(ikincisigaram.paketfiyati);
+
+        //document.write(ikincisigaram.sigara+" "+ ikincisigaram.paketfiyatiHesapla);
+
+        /* let ilksigaram = new paket("Parlament",20,"Beyaz","7cm",10,toplamfiyat); */
+
+        /* console.log(ilksigaram); */
+
+        /* document.write(ilksigaram.sigara+" "+ilksigaram.uzunluk); */
+    </script>
+</body>
+
+</html>

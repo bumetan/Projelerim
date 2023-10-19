@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const firtName = 'Bugra';
+        const age = 28;
+        const isStudent = true;
+        const school = 'university';
+
+
+        if (firtName == 'Bugra') {
+            console.log('Selam Bugra ')
+        };
+
+        if (age === 28) {
+
+            console.log('Yaşınız ' + age + ' dir')
+        }
+        if (isStudent)
+
+        {
+            console.log('Merhaba Öğrenci');
+        }
+
+        if (isStudent) {
+            console.log('Öğrencisiniz');
+        } else {
+            console.log('Öğrenci değilsiniz.')
+        }
+
+        if (age >= 18) {
+
+            if ((school == 'university') || (school == 'high school')) {
+                console.log('ehliyet alabilirsiniz');
+            } else {
+                console.log('Eğitim durumunuz yetersiz.');
+            }
+        } else {
+            console.log(`${firtName} is a child`);
+        }
+
+        //undefined 
+
+        let id = '321';
+
+        if (typeof id !== 'undefined') {
+            console.log(`id: ${id} dir`);
+        } else {
+            console.error('no id');
+        }
+    </script>
+
+</body>
+
+</html>

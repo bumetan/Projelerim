@@ -1,0 +1,41 @@
+
+.navbar{
+    background-color: #085E7D;
+}
+
+.header_item_b{
+    background-color: #085F7D;
+}
+
+
+.card-img-top{
+    width:100%;
+    height: 25vh;
+    object-fit: cover;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+}
+.card-img-top:hover{
+    transform: scale(1.2) rotate(-3deg) ;
+    -webkit-transform: scale(1.2) rotate(-3deg) ;
+    -moz-transform: scale(1.2) rotate(-3deg) ;
+    -ms-transform: scale(1.2) rotate(-3deg) ;
+    -o-transform: scale(1.2) rotate(-3deg) ;
+    opacity: .9;
+}
+
+#map{
+    height: 450px;
+ 
+}
+
+@media (min-width:768px) {
+
+    #map{
+        height: 100%;
+    }
+    
+}

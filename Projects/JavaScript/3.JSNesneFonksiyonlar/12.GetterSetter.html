@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getter & Setter</title>
+  </head>
+  <body>
+    <script>
+      /*  const person = {
+             firtName: "Buğra",
+             lastName: "Mert",
+             getfullName: function () {
+               return `${this.firtName} ${this.lastName}`;
+             },
+             setFullName: function (value) {
+               const parts = value.split(" ");
+               this.firtName = parts[0];
+               this.lastName = parts[1];
+             },
+           };
+
+           person.setFullName("Buğra Mert");
+           console.log(person.getfullName());
+      */
+      const person = {
+        firtName: "Buğra",
+        lastName: "Mert",
+      };
+
+      Object.defineProperty(person, "fullName", {
+        get function() {
+          return `${this.firtName} ${this.lastName}`;
+        },
+        set function(value) {
+          const parts = value.split(" ");
+          this.firtName = parts[0];
+          this.lastName = parts[1];
+        },
+      });
+
+      Object.defineProperty(person, "age", {
+        value: 50,
+        writable: true, // yazılabilir yapmazsak bir sonra ki kodda person.age = 55 yapsak dahi age obje yazdırıldığında 50 olarak kalır.
+      });
+
+      console.log(person.age);
+
+      person.fullName = "Buğra Mert";
+      console.log(person.fullName);
+
+      //-----------------------------------------------------------------------------------------------------------------------
+
+      let user = {
+        get name() {
+          return this._name;
+        },
+
+        set name(value) {
+          if (value.length < 4) {
+            alert("İsim çok kısa, en az 4 karakter olmalıdır.");
+            return;
+          }
+          this._name = value;
+        },
+      };
+
+      user.name = "Pete";
+      console.log(user.name); // Pete
+
+      user.name = ""; // İsim çok kısa...
+    </script>
+  </body>
+</html>

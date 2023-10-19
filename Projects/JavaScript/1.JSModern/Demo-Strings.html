@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings Demo</title>
+</head>
+
+<body>
+
+    <script>
+        // Demo : String 
+
+        var sentence =
+            " Template Literals or template strings is the ability Have multi-lin strings without any funny business. ";
+
+        var url = "http://sadikturan.com/Modern Javascript KURSU sıfırdan ileri seviye";
+
+        let val;
+        //cümle kaç karakterlidir.
+
+        // console.log(sentence.length);
+
+        //kaç kelimeden oluşuyor
+
+
+
+        val = sentence.trim().split(' ').length; //trim() baştaki ve sondaki boşlukları siler.
+        console.log(val);
+
+
+        // Tüm cümleyi küçük harfe çevirin
+
+        val = sentence.toLowerCase();
+
+        // Cümlenin başındaki ve sonundaki boşlukları siliniz.
+
+        console.log(sentence.trim());
+        console.log(sentence);
+
+        //'-' karakterini silin.
+
+        val = sentence.replace('-', '');
+
+        //url'nin içinden http:// kısmını çıkarın.
+
+        let cikar = 'http://';
+
+        url = url.replace(cikar, '');
+        console.log(url); //yada
+        console.log(url.substr(cikar.length)); // yada
+        console.log(url.slice(cikar.length));
+
+        // url hangi protokolü kullanmaktadır.
+
+        //startsWith içerisine yazılan string ile başlayıp başlamadığını gösterir. true veya false döndürür.
+
+        console.log(url.startsWith('http'));
+        console.log(url.startsWith('https'));
+
+        // url, '.com' ifadesini içeriyor mu?
+
+        console.log(url.indexOf('.com'));
+        console.log(url.includes('.com'));
+
+        console.log(url);
+
+        // url string ifadesini gerçeli bir url olarak düzenleyiniz.
+        // / /g iki slash arasına yazılan bütün karakterleri seçer.
+        console.log(url.toLowerCase().replace(/ /g, '-').replace(/ı/g, 'i').replace(/ü/g, 'u'));
+        val = url.replace(' ', '');
+        console.log(url);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        console.log(val);
+    </script>
+
+</body>
+
+</html>

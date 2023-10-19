@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anasayfa</title>
+</head>
+
+<body>
+    <div id="header" class="primary bg-primary">
+        UYGULAMA
+    </div>
+    <div id="section1" class="primary">
+        Bir çeşit uygulama
+    </div>
+    <div class="photos">
+        <div><img src="" alt=""><img src="" alt=""><img src="" alt=""><img src="" alt=""></div>
+    </div>
+    <div id="forms">
+        <form id="kayitOl" action="" method="POST">
+
+        </form>
+        <form id="girisYap" action="https://www.google.com/search">
+            Google'da ARA <input type="input" name="q">
+            <input type="submit" value="Gönder">
+        </form>
+    </div>
+    <div id="takimlar">
+        <ul>
+            <li><a name="Fatih" href="https://www.google.com/search?q=galatasaray" target="_blank">Galatasaray</a></li>
+            <li><a href="https://www.google.com/search?q=fenerbahçe" target="_blank">Fenerbahçe</a></li>
+            <li><a href="https://www.google.com/search?q=trabzonspor" target="_blank">Trabzonspor</a></li>
+            <li><a href="https://www.google.com/search?q=beşiktaş" target="_blank">Beşiktaş</a></li>
+        </ul>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        //DOM (Document Object Model)
+        //var= variable(değişken)
+        var objeler = document;
+        objeler = document.all;
+        objeler = document.all.length;
+        objeler = document.all;
+        objeler = document.all[7];
+        objeler = document.head;
+        objeler = document.title;
+        objeler = document.body;
+        objeler = document.anchors; //ismi verilmişse bulur
+        objeler = document.links;
+        objeler = document.links['Fatih']; //isme göre bulmayı sağlar.
+        objeler = document.URL;
+        objeler = document.domain;
+        objeler = document.images;
+        objeler = document.children[0]['lang'];
+        objeler = document.forms;
+        objeler = document.forms[0];
+        objeler = document.forms[0].id;
+        objeler = document.forms[0].method;
+        objeler = document.forms[1].method;
+        objeler = document.forms[1].action;
+        objeler = document.scripts;
+        objeler = document.scripts[0];
+        objeler = document.scripts[0].src; //bu scriptin bulunduğu dosya dizini
+        objeler = document.scripts[0].getAttribute('src'); //script objesinin src attribute'ünün değeri
+        console.log(objeler);
+
+
+        header = document.getElementById('header');
+        console.log(header);
+        console.log(header.id);
+        console.log(header.className);
+
+        x = document.getElementsByClassName('bg-primary');
+        console.log(x[0].className)
+        console.log(x[0].classList);
+        x[0].classList.remove('bg-primary');
+        x = document.getElementsByClassName('primary');
+        console.log(x[0].className);
+
+        u = document.getElementById("header");
+        console.log(u);
+        u.style.fontSize = "30px";
+        u.style.color = "green";
+        //u.style.fontWeight = "bold";
+        //u.innerText = "<b>Benim Uygulamam</b>";
+        u.innerHTML = "<b>Benim Uygulamam</b>";
+        u.textContent = "<b>naber</b>"; //ınnerText ıle aynı görevı görür
+
+        //querySelector
+        x = document.querySelector('#header');
+        console.log(x);
+        x = document.querySelector('.primary');
+        console.log(x);
+        x = document.querySelectorAll('.primary');
+        console.log(x);
+        console.log(x[0]);
+        console.log(x[1]);
+        for (i = 0; i < x.length; i++) {
+            console.warn(x[i]);
+        }
+        x.forEach(etiket => {
+            console.error(etiket);
+        });
+
+        function elemanlariYazdir(currentValue, siraNumarasi) {
+            console.warn(siraNumarasi + 1, currentValue)
+        }
+
+        x.forEach(elemanlariYazdir);
+
+
+        /*  function Insan(dogumYili, yasSoyleFonksiyonu){
+            this.dogumYili = dogumYili;
+            this.yasSoyleFonk = yasSoyleFonksiyonu;
+        }
+
+        function yasSoyle(yil){
+            console.error(2021-yil);
+        }
+
+        insan1 = new Insan(1994, yasSoyle);
+        insan1.yasSoyleFonk(insan1.dogumYili);
+
+ */
+
+        /*   function konus(ifade) {
+
+            console.log(ifade);
+
+        }
+
+function Insan(Name,Fonksiyon) {
+
+    this.name = Name;
+    this.talk = Fonksiyon;
+
+}
+
+insan1 = new Insan("Ahmet",konus);
+
+insan1.talk("Selam");
+
+konus("Selam");
+
+ */
+
+        /* İnsan parametreleri yürü,koş,dur ve hangi insanın yürüme, koşma durma bilgisi verilsin. */
+
+        function Insan(isim, yuru, kos, dur) {
+            this.isim = isim;
+            this.yuru = yuru;
+            this.kos = kos;
+            this.dur = dur;
+
+        }
+
+
+        function yuru() {
+
+            console.log(this.isim+" Yürüdü");
+        }
+
+        function kos() {
+            console.log("Koştu");
+
+        }
+
+        function dur() {
+            console.log("Durdu");
+        }
+
+        insan1 = new Insan("Bugra", yuru, kos, dur);
+        insan2 = new Insan("Fatih", yuru, kos, dur);
+
+        insan1.yuru();
+        insan1.kos();
+        insan1.dur();
+
+        insan2.yuru();
+        insan2.kos();
+        insan2.dur();
+
+
+    </script>
+
+</body>
+
+</html>

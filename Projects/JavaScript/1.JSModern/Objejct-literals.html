@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Literals</title>
+</head>
+
+<body>
+    <script>
+        let firstName = 'Bugra';
+
+
+        let personal1 = {
+            name: 'Bugra',
+            name2: 'Mert',
+            surName: 'TAN',
+            age: 29,
+            favoriteColour: 'blue',
+            adress: {
+                city: 'İstanbul',
+                country: 'Türkiye',
+            },
+
+            getBirthYear: function () {
+                return new Date(Date.now()).getFullYear() - this.age;
+            }
+        }
+        console.log(personal1);
+        console.log(personal1.getBirthYear());
+
+
+
+        // DİZİ ŞEKLİNDE.
+
+        let people = [
+
+            {
+                firstName: 'Bugra',
+                surName: 'TAN'
+            },
+            {
+                firstName: 'Ahmet',
+                surName: 'Şen'
+            }
+        ]
+        let val;
+        val = people[1].firstName;
+        console.log(val);
+        for (let i = 0; i < people.length; i++) {
+            console.log(people[i].firstName);
+        }
+
+        // TUTORİALS
+
+        /*  ARAÇ BİLgileri
+
+        id : bmw116d_1234
+        model : 116d
+        yil : 2013
+        renk : white
+        servis kayitlari :
+        id : bmw116d_1234_1 tarih : 30.01.2016 km : 13000 toplam ücret : 900
+
+        servis detayı : 
+
+        id : 1 işlem : yağ değişim ücret : 300
+        id : 2 işlem filtre değişimi : 300
+        id : 3 işlem : fren hidroliği : 300
+
+        id : bmw116d_1234_2 tarih : 10.01.2017 km : 2800 toplam ücret : 1800
+
+        id : 1 işlem : yağ değişimi ücret : 350
+        id : 2 işlem : filtre değişimi : 350
+        id : 3 işlem : fren  hidroliği : 300
+        id : 3 işlem : balata değişimi : 800
+
+
+
+ */
+
+        let araclar;
+
+        araçlar = [{
+            id: 'bmw116d_1234',
+            model: '116d',
+            yil: 2013,
+            renk: 'white,',
+            serviskayitlari: {
+                id: 'bmw116d_1234_1',
+                date: new Date(2016, 01, 30),
+                km: 13000,
+                totalPrice: 900,
+                servisDetayi: [{
+                    islem1: {
+                        yagDegisimiucret: 300
+                    },
+                    islem2: {
+                        filtredegisim: 300
+                    }
+                }]
+            }
+        }];
+
+
+        //Son
+    </script>
+</body>
+
+</html>

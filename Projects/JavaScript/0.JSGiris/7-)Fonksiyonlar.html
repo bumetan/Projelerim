@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function carp(a, b) {
+            var sonuc = a * b;
+            console.log(sonuc); //yada
+            // Fatihe SOR    console.log(carp(a,b));
+        }
+
+
+        carp(prompt('Sayı giriniz'), prompt('2. Sayıyı Giriniz'));
+        var now = 2021;
+
+        function yashesapla(yas) {
+            return now - yas;
+        }
+        var Bugra = yashesapla(prompt('Buğra Bey Doğum Yılınızı Giriniz'));
+        var Enes = yashesapla(prompt('Enes Bey Doğum Yılınızı Giriniz'));
+        console.log(Bugra);
+        console.log(Enes);
+        console.log(Enes - Bugra);
+
+        // ********************************** FATİH - UDEMY **********************************
+
+
+        // PARAMETRESİZ FONKSİYON
+
+        function selamver() {
+            document.write("Selam Naber");
+        }
+        selamver();
+
+        // PARAMETRELİ FOKNSİYON
+
+        function selamcek(isim) {
+            document.write(isim + " Naber</br>");
+
+        }
+        selamcek("Bugra");
+
+        function carpma(a, b, c) {
+
+            var carpma;
+            carpma = (a * b * c);
+
+            document.write(carpma);
+        }
+
+        carpma("4", "4", "5");
+        carpma(3, 4, 5);
+
+        // ********************************** RETURN **********************************
+
+        /*     function topla(sayi1, sayi2) {
+
+            return sayi1 + sayi2;
+        }
+
+        document.write("</br>" + topla(2, 3));
+ */
+
+        function tekmiCiftmi(sayi3) {
+            var ifade;
+            // 0 => çift     1 =>tek
+            if (sayi3 % 2) {
+                ifade = "Tek Sayıdır";
+            } else {
+                ifade = "Çift Sayıdır";
+            }
+            return ifade;
+        }
+
+        for (i = 0; i <= 40; i++) {
+            
+            if (i==5) { 
+                continue;
+            }
+            console.log(i + "  bu bir " + tekmiCiftmi(i));
+        }
+
+
+
+
+        ////////////////////////// FONKSİYON TIKANDI
+
+      
+      
+
+    </script>
+</body>
+
+</html>

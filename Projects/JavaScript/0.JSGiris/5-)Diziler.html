@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Dizi tanımlama yöntemleri
+
+        var proje = ['Demokrasi Günlüğü', 'Ekonomi Gerçekleri', 'Günün Yalanları', 'Yekvücut'];
+        var model = new Array('Alt Başlık 1', 'Alt Başlık 2', 'Alt Başlık 3', 'Alt Başlık 4');
+
+        console.log(proje);
+        console.log(model);
+
+        // dizinin içerisindeki berlirli bir değişkeni değiştirmek için
+
+        model[0] = 'Alt Başlık 0';
+        console.log(model);
+
+
+        var auris = ["Toyota", "Auris", 42, true];
+
+        console.log(auris);
+
+        auris.push('blue'); // push methodu ile dizinin sonuna 1 değer ekler
+        auris.unshift('HB'); // unshift methodu ile dizinin başına 1 değer ekler
+        auris.pop(); //pop methodu Dizinin en sonundaki elemanı siler
+        auris.shift(); // shift methodu Dizinin en başındaki elemanı siler
+
+        //index.Of methodu dizi içerisinde arama yapmayı sağlar.
+
+
+        for (i = 0; i <= auris.length; i++) {
+
+            console.log(auris[i]);
+        }
+
+
+
+        /* PROJELER ARASINDA Ekonomi Gerçekleri ni arayıp varsa yazdırdık. 
+        Önce if ile dizi içerisinde Ekonomi Gerçekleri varmı yokmu onu kontrol ediyoruz yoksa -1 değer döndürür. Varsa dizi numarasını verir.
+        Sonrasında indexOf ile kaçıncı sırada olduğunu bulup console.loga onu yazdırıyoruz.
+        */
+
+        //indexOf değişkenin diziler içerisindeki index numarasını verir. Değişken yoksa -1 verir.
+
+        console.log(proje.indexOf('Günün Yalanları')); // Console 2 yazıyor. Bak.
+        console.log(proje.indexOf('dsadas')); // Console -1 yazıyor. Bak.
+        
+
+        if (proje.indexOf('Ekonomi Gerçekleri') !== -1) {
+            console.log(proje[proje.indexOf('Ekonomi Gerçekleri')]);
+            console.log("Bulundu");
+        }
+
+        if (proje.indexOf('Selamke') !== -1) {
+            console.log(proje[proje.indexOf('Ekonomi ')]);
+        }
+        else{
+            console.log("Değer bulunamadı.")
+        }
+
+
+
+
+
+/******************************************************* FATİH UDEMY *******************************************************/
+
+// DİZİ OLUŞTURMA 0
+
+let kisi0 = ["Buğra","Mert","TAN"];
+
+document.write(kisi0+"</br>");
+
+// DİZİ OLUŞTURMA 1
+
+let kisi = new Array();
+
+kisi[0]="Buğra";
+kisi[1]="Mert";
+kisi[2]=28;
+
+document.write(kisi);
+
+// DİZİ OLUŞTURMA 2
+
+let kisi2 = [];
+
+kisi2["isim"] = "Ahmet";
+kisi2["soyisim"] = "Mehmet";
+kisi2["yas"] = 30;
+
+document.write("</br>"+ kisi2.isim);
+
+// DİZİ BİRLEŞTİRME  // CONCAT
+
+let Bugra = ["Adı","Soyadı","Yaşı"];
+let Bugra2 = ["hobileri","fobileri"];
+
+document.write("</br>"+Bugra.concat(Bugra2));
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

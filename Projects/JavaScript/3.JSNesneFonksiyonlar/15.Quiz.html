@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col-12">
+
+                <div class="card">
+                    <div class="card-header">
+                        Quiz
+                    </div>
+                    <div class="card-body">
+                        <h5 id="question" class="card-title">
+                            Question Text
+                        </h5>
+                        <hr>
+                        <div id="buttons">
+                            <button id="btn0" class="btn btn-primary">
+                                <span id="choice0">
+                                    Choice 0
+                                </span>
+                            </button>
+                            <button id="btn1" class="btn btn-primary">
+                                <span id="choice1">
+                                    Choice 1
+                                </span>
+                            </button>
+                            <button id="btn2" class="btn btn-primary">
+                                <span id="choice2">
+                                    Choice 2
+                                </span>
+                            </button>
+                            <button id="btn3" class="btn btn-primary">
+                                <span id="choice3">
+                                    Choice 3
+                                </span>
+                            </button>
+
+
+                        </div>
+                    </div>
+                    <div id="progress" class="card-footer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function Question(text, choices, answer) {
+            this.text = text;
+            this.choices = choices;
+            this.answer = answer
+        }
+        Question.prototype.checkAnswer = function(answer) {
+            return this.answer === answer;
+        }
+
+        function Quiz(question) {
+            this.question = question;
+            this.score = 0;
+            this.questionIndex = 0;
+        }
+        Quiz.prototype.isFinish = function() {
+            return this.question.length == this.questionIndex
+        }
+        Quiz.prototype.getQuestion = function() {
+            return this.question[this.questionIndex]
+        }
+        Quiz.prototype.guess = function(answer) {
+            let simdiki = this.getQuestion();
+            if (simdiki.checkAnswer(answer)) {
+                this.score++;
+                console.log("doğru0" + " " + this.score);
+            }
+            this.questionIndex++;
+        }
+        let s1 = new Question("How was your day?", ["Very Well", "Bad", "Normal", "Good Day"], "Very Well");
+        let s2 = new Question("What is your favorite team?", ["GS", "TS", "FB", "BJK"], "GS");
+        let s3 = new Question("What is your favorite programming language?", ["JS", "C#", "C+", "Python"], "JS");
+        let questionsArray = [s1, s2, s3];
+        let quiz = new Quiz(questionsArray);
+        loadFunction();
+
+        function loadFunction() {
+            if (quiz.isFinish()) {
+                showScore();
+            } else {
+                let nowQuestion = quiz.getQuestion();
+                let choices = nowQuestion.choices;
+
+                document.getElementById("question").innerHTML = nowQuestion.text;
+                for (let i = 0; i < choices.length; i++) {
+                    document.querySelector("#choice" + [i]).innerHTML = choices[i];
+                    guess("btn" + i, choices[i]);
+                }
+                showProgses();
+            }
+        }
+
+        function guess(id, guess) {
+            var btn = document.getElementById(id);
+            btn.onclick = function() {
+                quiz.guess(guess);
+                loadFunction();
+            }
+        }
+
+        function showScore() {
+            let c = document.querySelector(".card-body");
+            c.innerHTML = " Score " + quiz.score + "<br> <hr>";
+
+            let btn = document.createElement("button");
+
+            btn.classList.add("btn", "btn-primary");
+            btn.classList.add();
+            btn.innerHTML = "Try Again";
+            btn.onclick = function() {
+                location.reload();
+            }
+            c.appendChild(btn);
+        }
+
+        function showProgses() {
+            let progress = document.querySelector("#progress");
+            let html = `Question ${quiz.question.length} of ${quiz.questionIndex + 1}`;
+            progress.innerHTML = html;
+        }
+    </script>
+
+</body>

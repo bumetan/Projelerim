@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+</head>
+
+<body>
+    <script>
+        // Destructuring
+        // Destructuring assigment
+        var a, b, rest;
+        a = 10;
+        b = 20;
+
+        [a, b] = [10, 20];
+        console.log(a);
+        console.log(b);
+
+        [a, b, ...rest] = [10, 20, 30, 40, 50, 60];
+        console.log(a);
+        console.log(b);
+        console.log(rest);
+        ({
+            a,
+            b
+        } = {
+            a: 10,
+            b: 20
+        });
+        console.log(a);
+        console.log(b);
+        console.log(rest);
+
+        ({
+            a,
+            b,
+            ...rest
+        } = {
+            a: 10,
+            b: 20,
+            c: 30,
+            d: 40
+        })
+        console.log(a);
+        console.log(b);
+        console.log(rest);
+
+        //Array destructuring
+
+        const arrConfig = ['localhost', '8080', '900'];
+        //ES5
+        var server = arrConfig[0];
+        var port = arrConfig[1];
+        var timeout = arrConfig[2];
+        console.log(server, port, timeout);
+
+        //ES6
+        const [server, port, timeout] = arrConfig;
+        console.log(server, port, timeout);
+
+        //Object Destructuring
+        const objConfig = {
+                server: 'localhost',
+                port: '8080',
+                timeout: 900
+            }
+            //ES5
+        var server2 = arrConfig[0];
+        var port2 = arrConfig[1];
+        var timeout2 = arrConfig[2];
+        console.log(server2, port2, timeout2);
+
+        //ES6
+        const {
+            server2,
+            port2,
+            timeout2
+        } = objConfig;
+
+        let {
+            timeout: t
+        } = objConfig;
+
+        console.log(t);
+
+        let {
+            server3,
+            port3,
+            timeout3 = 900
+        } = objConfig;
+
+        console.log(server3, port3, timeout3);
+
+        const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+        const [, , wed, , fri] = days;
+    </script>
+
+</body>
+
+</html>

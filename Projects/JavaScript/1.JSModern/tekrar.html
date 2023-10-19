@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // Demo : String
+
+
+        var sentence =
+            " Template Literals or template strings is the ability Have multi-lin strings without any funny business. ";
+
+        var url = "http://sadikturan.com/Modern Javascript KURSU sıfırdan ileri seviye";
+
+        let val;
+        //cümle kaç karakterlidir.
+
+        console.log(sentence.length);
+
+
+        //kaç kelimeden oluşuyor
+
+        console.log(sentence.trim().split(' ').length);
+
+        // Tüm cümleyi küçük harfe çevirin
+
+        console.log(sentence.toLowerCase());
+
+        // Cümlenin başındaki ve sonundaki boşlukları siliniz.
+
+        console.log(sentence.trim());
+
+        //'-' karakterini silin.
+
+        console.log(sentence.replace('-', ''));
+
+
+        //url'nin içinden http:// kısmını çıkarın.
+        let cikar = "http://";
+
+        // console.log(url.split(cikar));
+
+        console.log(url.slice(cikar.length));
+
+        // url hangi protokolü kullanmaktadır.
+
+        console.log(url.startsWith(cikar));
+        console.log(url.startsWith('https://'));
+
+        //startsWith içerisine yazılan string ile başlayıp başlamadığını gösterir. true veya false döndürür.
+
+        // url, '.com' ifadesini içeriyor mu?
+
+        console.log(url.indexOf('.com'));
+        console.log(url.includes('.com'));
+
+
+        // url string ifadesini gerçeli bir url olarak düzenleyiniz.
+
+
+
+        console.log(url.replace(/ /g, '').toLowerCase().replace(/ı/g, 'i'));
+
+
+        console.log(val);
+    </script>
+</body>
+
+</html>

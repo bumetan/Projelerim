@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let now = 2021;
+        var models = ['Toyota', 'Mazda', 'Mercedes', 'Opel'];
+        var years = ['2015', '2012', '2016', '2014'];
+
+
+        // 1: Tüm modelleri yazdırınız.
+
+        for (i = 0; i <= models.length; i++) {
+            console.log(models[i]);
+        }
+
+
+        // 3: Aşağıdaki Görüntüyü console'da oluştur.
+
+        // Toyota 2015 model ve 3 yaşında bir araçtır. şeklinde tamamını yazdır.
+
+        /*  for (sayi = 0; sayi <= models.length; sayi++) {
+
+             console.log(models[sayi] + ' ' + years[sayi] + ' model ve ' + (now - years[sayi]) + ' yaşında bir araçtır');
+         
+         } */
+
+        // 3: models ve years dizilerine eleman eklenebilsin.
+
+        var yearsEkle = prompt('Yıl Ekleyiniz.');
+        var modelsEkle = prompt('Model Ekleyiniz');
+
+        years.push(yearsEkle);
+        models.push(modelsEkle);
+
+
+        for (sayi = 0; sayi <= models.length - 1; sayi++) {
+
+            console.log(models[sayi] + ' ' + years[sayi] + ' model ve ' + (now - years[sayi]) + ' yaşında bir araçtır');
+
+        }
+
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototypal İnheritance</title>
+  </head>
+  <body>
+    <script>
+      let Person = function (name, yearOfbirth, job) {
+        this.name = name;
+        this.yearOfbirth = yearOfbirth;
+        this.job = job;
+      };
+
+      Person.prototype.calculateAge = function () {
+        return 2022 - this.yearOfbirth;
+      };
+
+      let Teacher = function (name, yearOfbirth, job, subject) {
+        Person.call(this, name, yearOfbirth, job); // Person objesinin içeriğini aldık
+        this.subject = subject;
+      };
+
+      let bumetan = new Teacher("Bugra", 2012, "Developer", "JS");
+      console.log(bumetan);
+
+      //INHERIT THE PERSON PROTOTYPE METHODS
+
+      Teacher.prototype = Object.create(Person.prototype);
+
+      // Personun prototype'nı Teachera aktardık.
+      console.log(Teacher.prototype.constructor);
+
+      // Yukarıda Personun prototype'nı Teachera aktardı fakat Teacherin constructoru person oldu.
+      // Bizim bunu teachere geri çevirmemiz gerekiyor.
+      // set Teacher constructor
+      Teacher.prototype.constructor = Teacher;
+      console.log(Teacher.prototype.constructor);
+
+      Teacher.prototype.greeting = function () {
+        return "hello my name is" + this.name;
+      };
+
+      let bugra = new Teacher("bugra", 1993, "Developer", "Math");
+      console.log(bugra);
+
+      console.log(bugra.calculateAge());
+
+      // Bu bölümde Teacher objesinin içerisine Person objesinin constructor unu Object.create methodu ile aktardık.
+      // Daha sonrasında Teachera kendi constructorunu verdik ve Person objesi Teacher objesinin alt elemanı oldu.
+    </script>
+  </body>
+</html>

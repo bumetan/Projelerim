@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beden Kitle İndexi Hesaplama</title>
+</head>
+
+<body>
+    <script>
+        // Can ve Ada'nın boy ve kg bilgilerini alın
+        // Alınan bilgilere göre kilo indekslerini hesaplayın.
+
+        // ** Formük : Kişinin Kilosu / Boy Uzunluğunun Karesi
+        // Hesaplanan indeks bilgisine göre karşılaştırma yapınız.
+        // Aşağıdaki tabloya göre can ve Ada ahang gruba dahil bulun.
+
+        // 0 -  18,5 : Zayıf
+        // 18,5 - 24,9: Normal
+        // 25,0 - 29,9 : Fazla Kilolu
+        //30,0 - 34,9 : Şişman (Obez)
+
+
+        let canKg = 100;
+        let canBoy = 1.86;
+        let adaKg = 50;
+        let adaBoy = 1.78;
+
+        let canBki = (canKg / (canBoy * canBoy)).toFixed(2);
+        console.log(canBki);
+
+        let adaBki = (adaKg / (adaBoy * adaBoy)).toFixed(2);
+        console.log(adaBki);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        console.log('Bitti');
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tür Dönüşümü</title>
+</head>
+
+<body>
+
+    <script>
+        let num1 = Number("5");
+        let num2 = Number("10");
+        let total = num1 + num2;
+        console.log(typeof total);
+        // Bu örnekte num1 ve num2 dizi olmasına rağmen "Number" ile type nı numbere dönüştürdük.
+        let val;
+        // number to string
+        val = String(10);
+        console.log(typeof val);
+        console.log(val.length);
+        // Bu örnekte stringi number olan val değişkenini string olarak değiştirdik.
+        // bool to string
+        let booltoString;
+        booltoString = String(true);
+        console.log(typeof booltoString);
+        console.log(booltoString.length);
+        //Bu örnekte boolean bir değeri yani true yi stringe çevirdik.
+        //date to string
+        let tarih = String(new Date());
+        console.log(typeof tarih);
+        //Bu örnekte tarihi Stringe çevirdik.
+        //array to string
+        let dizi;
+        dizi = String([1, 2, 3, 4]);
+        console.log(typeof dizi);
+        // Bu örnekte diziyi stringe çevirdik.
+        //toSrting()
+        let ornek;
+        ornek = (10).toString();
+        console.log(typeof ornek);
+        //Bu örnekte toString() methodu ile numberi stringe çevirdik.
+        //String to Number
+        ornek = Number('10');
+        console.log(typeof ornek);
+        console.log(ornek.toFixed(5));
+        ornek = Number(true); // True 1 olarak number atanır.
+        ornek = Number(false); // False 0 olarak number atanır.
+        ornek = Number(null); // null 0 olarak number atanır.
+        ornek = Number([1, 2, 3, 4]); // Diziler Numbere çevrilemez NaN (Not a Number hatası verir.)
+        ornek = Number('a'); // NaN hatası alınır.
+        //parseInt
+        //parseFloat
+        val = parseInt('10'); //Number olarak çevirir
+        val = parseInt("10.5"); // Tam sayı olarak numbere çevirir.
+        val = parseFloat("10.5"); // Kesirli sayı olarak çevirir.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        console.log("Bitti");
+    </script>
+
+</body>
+
+</html>

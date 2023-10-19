@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const firstName = 'Bugra';
+        const surName = 'TAN';
+        const age = 28;
+
+        let val;
+
+
+        //string concatenation
+
+        val = firstName + ' ' + surName;
+        val = 'Bugra';
+        val += ' TAN';
+        val = ' ' + firstName + ' ' + surName + ' yaşım ' + age + ' İstanbul\'da yaşıyorum.';
+
+
+
+        //string concat
+
+        val = firstName.concat(' ', surName);
+
+        //string uppercase
+        val = val.toUpperCase();
+
+        //string lowercase
+
+        val = val.toLowerCase();
+
+
+
+        //string length
+
+        //val = val.length;
+
+        // val = val[0]; // valin ilk karakterini verir. 
+
+        // val = val.indexOf('u'); // val değerinin içerisindeki u harfinin kaçıncı sırada olduğu yazar.
+        //val = val.indexOf('gra'); // val stringinin içerisinde 'gra' nın kaçıncı karakterden başladığını yazar.
+
+        // substring
+
+        // val = val.substring(0, 5); // sıfır ve 5 arasındaki indexleri getirir.
+
+        // val = val.slice(5); // 5. karakterden başlar sona kadar seçer.
+
+        // string replace
+
+        val = val.replace('bugra', 'mert'); // bugra stringini mert ile değiştirir.
+
+
+        //split  -- string ifadeyi seçtiğimiz yerden objeye çevirir.
+
+        let hobbies = 'Sinema,Spor,Kitap,Yazılım';
+
+
+        val = hobbies.split(','); // bu örnekte hobbieslerin arasındaki virgüllerden itibaren obje oluşturdu.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        console.log(val);
+        console.log(typeof val);
+    </script>
+
+</body>
+
+</html>

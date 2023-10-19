@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+   
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="forms.css">
+  </head>
+
+  <body id="body">
+     <header class="bgorange">
+        <div class="container" id="headernav">
+            <a href="index.html" id="logo">MovieApp</a>
+            <nav id="responsivenav" class="header_nav">
+                <ul  class="header_nav__item">
+                    <li class="header_nav___item">
+                        <a href="#" onclick="navmenu()"> <i class="fa-solid fa-bars header_nav____item"></i></a>
+                    </li>
+                    <li class="header_nav___item">
+                        <a class="header_nav____item" href="#">Filmler</a>
+                    </li>
+                    <li class="header_nav___item">
+                        <a class="header_nav____item" href="#">Diziler</a>
+                    </li>
+                    <li class="header_nav___item">
+                        <a class="header_nav____item btn1" href="register.html">Login</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <a href="#body" id="backtotop">
+      <i class="fas fa-chevron-circle-up"></i>
+    </a>
+    <main class="signup-page">
+      <h1 class="signup-title">Create Your Account</h1>
+      <form action="" class="signup-form">
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" />
+
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" />
+
+        <label for="gender">Gender</label>
+        <select id="gender">
+            <option value="">Select</option>
+            <option value="">Kadın</option>
+            <option value="">Erkek</option>
+        </select>
+
+        <input type="checkbox" id="agree-terms">
+
+        <label for="agree-terms">Agree to 
+            <a href="#">Terms &amp; Conditions</a>
+        </label>
+
+        <button type="submit" class="btn2">Submit</button>
+      </form>
+    </main>
+    <footer>
+      <div class="row">
+        <div class="container">
+          <div class="col-2">
+            <ul>
+              <li>About</li>
+              <li>Blog</li>
+              <li>Forum</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+          <div class="col-2 fab">
+            <ul>
+              <li><i class="fa-brands fa-facebook"></i></li>
+              <li><i class="fa-brands fa-twitter"></i></li>
+              <li><i class="fa-brands fa-instagram"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // PROTOTYPE
+
+
+        let Person = function(name, surname, age) {
+            this.name = name;
+            this.surname = surname;
+            this.age = age;
+        }
+
+        Person.prototype.yashesapla = function() {
+            return 2022 - this.age;
+
+        }
+
+        let bugra = new Person('Buğra', 'Mert', 28);
+
+        let Teacher = function(name, surname, age, branch) {
+            Person.call(this, name, surname, age);
+            this.branch = branch;
+        }
+        Teacher.prototype = Object.create(Person.prototype);
+        console.log(Teacher.prototype.constructor);
+        Teacher.prototype.constructor = Teacher;
+        console.log(Teacher.prototype.constructor)
+        let MertTan = new Teacher('Mert', 'TAN', 23, "IT");
+
+        console.log(MertTan.yashesapla());
+        console.log(bugra.yashesapla());
+        console.log(bugra.hasOwnProperty('yashesapla')); // False verir çnkü yashesapla personun prototypeı.
+        console.log(bugra.hasOwnProperty('name')); // True verir çünkü name Personun bir özelliği.
+
+
+        // OBJECT CREATE
+        let yasHesaplama = {
+            calculateAge: function() {
+                return 2022 - 1990;
+            }
+        }
+
+        let bugraMert = Object.create(yasHesaplama, {
+            name: {
+                value: "Bugra"
+            },
+            surname: {
+                value: "TAN"
+            },
+        });
+        console.log(bugraMert.calculateAge());
+
+        // PROTOTYPAL INHERITANCE
+
+        let Lerson = function(name, surname, lastname) {
+            this.name = name;
+            this.surname = surname;
+            this.lastname = lastname;
+
+        }
+        Lerson.prototype.fullName = function() {
+            return this.name + " " + this.surname
+        }
+
+        let Eacher = function(name, surname, lastname, branch) {
+
+            Lerson.call(this, name, surname, lastname);
+            this.branch = branch;
+
+        }
+        Eacher.prototype = Object.create(Lerson.prototype);
+
+        Eacher.prototype.constructor = Eacher;
+        console.log(Eacher.prototype.constructor);
+
+        let ah = new Eacher("sa", "as", "bb", "cc");
+
+        console.log(ah.fullName());
+
+
+        // CALLBACK FUNCTIONS
+
+        function MultipleByTwo(a, b, c) {
+
+            let arr = new Array;
+
+            for (i = 0; i < arguments.length; i++) {
+                arr[i] = arguments[i] * 2;
+            }
+            return arr;
+        }
+
+        function birEkle(a) {
+            return a + 1;
+        }
+
+
+        let val = MultipleByTwo(2, 3, 4);
+
+        for (i = 0; i < 3; i++) {
+
+            val[i] = val[i] + 1;
+        }
+        console.log(val);
+
+        // Yukarıdaki bütün işlemler tek işlemde birleşebilir.
+
+        function MultipleByTwo2(a, b, c, callback) {
+
+            if (callback && typeof callback === "function") {
+                let bbb = new Array;
+
+                for (i = 0; i < arguments.length - 1; i++) {
+                    bbb[i] = callback(arguments[i] * 2);
+                }
+                return bbb;
+            }
+        }
+
+        console.log(MultipleByTwo2(3, 4, 5, birEkle));
+
+
+
+        // IMMEDIATE FUNCTIONS
+
+        (function(a) {
+            a = a * 2;
+            console.log(a);
+        }("4"));
+
+        // FUNCTION THAT RETURN FUNCTION
+
+        function ArabaModeli(model) {
+
+            switch (model) {
+                case "Astra":
+                    return function(spect) {
+                        console.log(`Astra aracınız ${spect} modeldir`);
+                    };
+                    break;
+                case "Clio":
+                    return function(spect) {
+                        console.log(`Astra aracınız ${spect} modeldir`);
+                    };
+                    break;
+                case "Insignia":
+                    return function(spect, mmodel) {
+                        console.log(`Astra aracınız ${spect} ${mmodel} modeldir.`);
+                    };
+                    break;
+
+                default:
+                    return function(spect) {
+                        console.log(`${model} modeli mevcut değildir.`);
+                    }
+            }
+
+        }
+
+        let aracModeli = ArabaModeli("Astra");
+        aracModeli("2012");
+
+        // GETTER SETTER
+
+        let bmt = {
+
+            name: "Buğra",
+            surname: "TAN"
+        }
+
+        Object.defineProperty(bmt, 'fullName', {
+
+            get function() {
+                return `${this.name} ${this.surname}`
+            },
+            set function(value) {
+                const parts = value.split(' ');
+                this.name = parts[0];
+                this.surname = parts[1];
+            }
+        });
+
+
+        bmt.fullName = "Mert TAN";
+        console.log(bmt.fullName)
+
+
+        // CALL APPLY BİND
+
+        const Objeler = function(ders1, ders2) {
+
+            console.log(`${this.name} nin birinci dersi ${ders1} ikinci dersi ise ${ders2}' dir`);
+
+        }
+
+        let Bugra3 = {
+            name: "Buğra"
+        }
+
+        Objeler.call(Bugra3, "JS", "HTML")
+        Objeler.apply(Bugra3, ["JS", "HTML"]);
+
+        let welcomeBugra = Objeler.bind(Bugra3);
+        welcomeBugra("JS", "HTML");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let yearOfBird = prompt('Please enter your year of birth');
+        let monthOfBird = prompt('Please enter your month of birth');
+        let nowYear = 2021;
+
+        if (yearOfBird <= (nowYear - 18)) {
+            alert('You can apply for a driver license')
+        } else if (18 - (nowYear - yearOfBird)) {
+            alert('You need '+(18 - (nowYear - yearOfBird))+' years more.' )
+        } else {
+            alert('Incorrect input')
+        }
+
+        switch (monthOfBird) {
+            case '1':
+                alert('January');
+                break;
+            case '2':
+                alert('February');
+                break;
+            default:
+                alert('Missing Information.');
+        }
+    </script>
+</body>
+
+</html>

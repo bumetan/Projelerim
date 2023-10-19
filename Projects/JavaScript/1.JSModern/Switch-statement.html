@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // swtich statements
+
+        let category = 'telefon';
+
+        switch (category) {
+
+            case 'telefon':
+                console.log('telefon kategorisi');
+                break;
+            case 'bilgisayar':
+                console.log('bilgisayar kategorisi');
+
+            default:
+                console.log('secim yok');
+        }
+
+        let day;
+
+        switch (new Date().getDay()) {
+            case 0:
+                day = 'Pazar';
+
+                break;
+            case 1:
+                day = 'Pazartesi';
+
+                break;
+            case 2:
+                day = 'Salı';
+
+                break;
+            case 3:
+                day = 'Çarşamba';
+
+                break;
+        }
+        console.log(`Bugün Günlerden ${day}.`);
+
+
+
+
+
+        let days;
+
+        switch (new Date().getDay()) {
+            case 0:
+            case 6:
+                days = 'Haftasonu';
+                break;
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                days = 'Haftaiçi';
+                break;
+        }
+        console.log(`Bugün Günlerden ${days}.`);
+
+        let age;
+        let firstName = 'Bugra';
+
+
+        switch (true) {
+            case (age > 0 && age <= 18):
+                console.log(`${firstName} çocuktur. Yaşı ${age} dir.`);
+                break;
+
+            case (age > 18):
+                console.log(`${firstName} yetişkindir. Yaşı ${age} dir.`);
+                break;
+            default:
+                console.log(`${firstName} nın Yaşını Girin`);
+        }
+
+
+        let aracbakim = (new Date(2019, 04, 20)).getFullYear();
+        let simdi = new Date(Date.now()).getFullYear();
+        let kacyil = simdi - aracbakim;
+
+        switch (kacyil) {
+            case 1:
+                console.log(`Aracınızın ${kacyil}. yıl bakımı geldi.`);
+                break;
+            case 2:
+                console.log(`Aracınızın ${kacyil}. yıl bakımı geldi.`);
+                break;
+            case 3:
+                console.log(`Aracınızın ${kacyil}. yıl bakımı geldi.`);
+                break;
+            default:
+                console.log('Bilinmeyen süre');
+        }
+
+
+        let result = prompt(`Who's there ?`);
+
+        if (result == 'cancel') {
+            console.log('cancelled');
+        } else if (result == 'Admin') {
+            console.log(`Welcome admin`);
+            let password = prompt('Enter your Password : ');
+            if (password == 'cancel') {
+                console.log('Cancelled');
+            } else if (password == '1234') {
+                console.log('Welcome admin');
+            } else {
+                console.log('wrong Password');
+            }
+        } else {
+            console.log('I dont know you');
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //Finish
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div id="baslik"></div>
+    <div class="Bugra"></div>
+    <div></div>
+
+
+
+
+    <script>
+        // ID HER ETİKETTE BİR ADET TANIMLANABİECEĞİ İÇİN ARRAY NUMARASI BELİRTİLMEDEN DİREK YAZILIR
+        document.getElementById("baslik").innerHTML = "selam";
+
+
+        // CLASS BİR ÇOK ELEMENTE VERİLEBİLECEĞİ İÇİN DİZİ NUMARASI GİRİLMELİDİR. AŞAĞIDAKİ ÖRNEKTE SIFIR OLARAK VERDİK.
+        document.getElementsByClassName("Bugra")[0].innerHTML = "<p style=\"background.color:red;\">selam</p>";
+
+        //TAGNAME ETİKETİNE GÖRE SEÇER BUNDADA DİZİ NUMARASI EKLENMELİDİR.
+        document.getElementsByTagName("div")[2].innerHTML = "selamke";
+
+
+// BÜTÜN ELEMANLARA EKLEME YAPMAK İSTERSEK FOR DÖNGÜSÜNE SOKUYORUZ
+
+let divlerimiz = document.getElementsByTagName("div");
+
+for(i=0;i<divlerimiz.length;i++)
+{
+    divlerimiz[i].innerHTML += "div" + i;
+}
+    
+//BODY VE CHIELD SECİMİ
+
+const bodymiz = document.body;
+
+ for (i=0;i<4;i++) {
+
+    bodymiz.innerHTML += "<p></p>";
+
+    // console bakarsan body içerisine 4 adet p eklendi.
+}
+
+
+    let bodycocuklari = bodymiz.childNodes;
+
+    for(i=0;bodycocuklari.length<5;i++) {
+
+      bodycocuklari[i].innerHTML = "Selam" +(i+1);
+    }
+
+
+
+
+    </script>
+
+</body>
+
+</html> 

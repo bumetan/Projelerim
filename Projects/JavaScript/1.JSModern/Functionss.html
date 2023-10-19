@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // start
+
+        // Function Declarations
+
+        function sum(a, b) {
+            let c = a + b;
+            return c;
+        }
+        console.log(sum(10, 20));
+
+        // Function Expressions
+        const zim = function (a, b) {
+            var c = a + b;
+            return c;
+        }
+
+        console.log(zim(10, 30));
+        console.log(zim(20, )); // NaN çıkar
+
+        // ES 6 Default Parameters
+
+        // yukarıdaki const örneğinde a ve b nin yerine bir değer atanmadığı için sonraki işlemlerde bir değer girilmezse NaN hatası verecektir güncellenen JS ile buna çözüm getirildi. Atanmayan değerlere varsayılan değer atayabiliriz. Örnek;
+
+
+        const varsayilanornegi = function (z = 0, y = 1) {
+            let zy = z * y;
+            return zy;
+        }
+        console.log(varsayilanornegi(9));
+
+
+        // ARGUMENTS
+
+        function sumALL() {
+
+            var total = 0;
+
+            for (let i = 0; i < arguments.length; i++) {
+
+                total += arguments[i];
+            }
+            return total;
+        }
+        console.log(sumALL(10, 20, 30, 40, 50));
+
+
+
+
+
+
+        /* // KENDİ ÖRNEĞİM BAŞLANGIÇ
+
+                const genelYapi = function (parametre1, parametre2) {
+
+                    let toplami = parametre1 + parametre2;
+
+                    return toplami;
+
+                }
+                console.log(genelYapi(1, 2));
+
+        // KENDİ ÖRNEĞİM BİTİŞ */
+
+
+
+
+
+        // Yaş hesaplama fonksiyonu 
+
+        /*         // BAŞLANGIÇ 
+
+                let nowYear = new Date(Date.now()).getFullYear();
+
+                function ageCalc(isim, parameters) {
+                    console.log(`Hey ${isim} centleman/ladie your age : ${nowYear-parameters}`);
+
+                }
+
+                ageCalc('Bugra', 1993);
+
+        // BİTİŞ */
+
+
+
+
+        // --------------------- FUNCTİON DECLARATİONS
+
+
+
+
+
+
+
+        /*     // It's my functions.
+
+        function islemyap(birinci, ikinci, ucuncu) {
+
+            return [birinci * ikinci, birinci / ikinci, birinci % ikinci, birinci + ikinci, birinci - ikinci];
+
+        }
+        let success = islemyap(1, 2);
+        console.log(success);
+
+        let i = 1;
+        while (i < 10) {
+            console.log(islemyap(i, 4));
+            i++;
+        }
+ */
+
+
+        // BANKAMATİK PARAÇEKME ÖRNEĞİ
+
+        var hesapA = {
+            ad: 'Ceren TAN',
+            hesapNo: '12345678',
+            Bakiye: 2000,
+            ekHesap: 1000
+        }
+
+        var hesapB = {
+            ad: 'Bugra Mert TAN',
+            hesapNo: '12345679',
+            Bakiye: 3000,
+            ekHesap: 2000
+        }
+
+        function paraCek(hesap, miktar) {
+            console.log(`Merhaba ${hesap.ad}`);
+
+            if (hesap.Bakiye >= miktar) {
+                hesap.Bakiye = hesap.Bakiye - miktar;
+                console.log(`Paranızı alabilirsiniz.`);
+
+            } else {
+                var toplam = hesap.Bakiye + hesap.ekHesap;
+
+                if (toplam >= miktar) {
+                    if (confirm('Ek hesabınızı kulanmak istermisiniz?')) {
+                        console.log('Paranızı alabilirsiniz');
+                        var bakiye = hesap.Bakiye;
+                        var ekHesap = miktar - bakiye;
+                        hesap.bakiye = 0;
+                        hesap.ekHesap = hesap.ekHesap - ekHesap;
+
+                    } else {
+                        console.log(`${hesap.hesapNo} nolu hesabınızda ${miktar} bulunmamaktadır`);
+                    }
+                } else {
+                    console.log('Üzgünüz bakiye yetersiz.');
+                }
+            }
+
+        }
+        paraCek(hesapA, 2000);
+        paraCek(hesapA, 1000);
+
+        paraCek(hesapB, 3000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // finish
+    </script>
+
+</body>
+
+</html>

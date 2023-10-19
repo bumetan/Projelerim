@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Immediate Functions</title>
+  </head>
+  <body>
+    <script>
+      // Bu şekilde yaptığımızda fonksiyon bir defa çalışır. Parametreyi fonksiyondna sonraki parantez içerisine gönderdik.
+
+      (function (name) {
+        var days = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ];
+        var today = new Date();
+        var message = "Welcome " + name + " Today is " + days[today.getDay()];
+        console.log(message);
+      })("Buğra");
+
+      // Aşağıdaki iki şekildede yazılabilir.
+
+      /*(function(){
+
+            }());
+
+            (function () {})();
+      */
+    </script>
+  </body>
+</html>

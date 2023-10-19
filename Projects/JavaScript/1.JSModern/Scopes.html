@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scopes</title>
+</head>
+
+<body>
+
+    <script>
+        // SCOPES
+
+        // ** Global Scopes // Global değişken tanımladık ve bütün scope larda kullandık.
+
+        var name = 'Bugra';
+        console.log(name);
+        console.log(window);
+
+        function logName() {
+            console.log(name);
+        }
+
+        if (true) {
+            console.log(name);
+        }
+
+        logName();
+        console.log(name);
+
+
+
+        // ** Local Scopes
+        // Fonksiyonlar kendi scope'larını oluşturur.
+        // Block'lar yeni scope oluşturmaz.
+        // ES6 ile gelen let ve const block scope oluştutur.
+
+
+        function logName() {
+            var name = 'Ceren';
+            var age = 12;
+            console.log(`Function scope ${name}`);
+            console.log(age);
+        }
+
+        //buna ulaşılamaz console.log(age);
+
+        if (true) {
+            var model = 'Opel';
+            let year = 2016;
+            const color = 'white';
+            console.log('block scope', model, year, color);
+
+        }
+        //    console.log('block scope', model, year, color); //year ve color dışarda olduğu için ulaşılamaz.
+        console.log(model); // Yazdırır
+        //    console.log(year); //Yazdırmaz
+        //    console.log(color); //Yazdırmaz
+        //------------------------------------------------------------------------------------
+        var i = 1;
+
+        for (let i = 0; i < 10; i++) {
+            console.log('i', i)
+        }
+        console.log(i);
+    </script>
+
+</body>
+
+</html>

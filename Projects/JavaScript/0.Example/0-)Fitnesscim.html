@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <input
+      id="kilogir"
+      type="number"
+      placeholder="Kilonuzu Giriniz"
+      name="boy"
+    />
+    <br />
+    <input
+      id="boygir"
+      type="number"
+      placeholder="Boyunuzu Giriniz"
+      name="kilo"
+    />
+    <br />
+    <button onclick="hesapla()">Hesapla</button>
+    <div id="bilgiVer"></div>
+
+    <script>
+      function hesapla() {
+        var kilo = document.getElementById("kilogir").value;
+        var boy = document.getElementById("boygir").value;
+        var index = kilo / ((boy * boy) / 10000);
+        index = Number(index.toFixed(2));
+        var bilgi = document.getElementById("bilgiVer");
+        let info;
+        if (index <= 18.4) {
+          info =
+            '<p style = "background-color:#eb0254; text-align:center;" > Vücut Kitle Indexsiniz ' +
+            index +
+            " dir. Acilen kilo almalısınız.";
+        } else if (index > 18.4 && index < 25) {
+          info =
+            '<p style = "background-color:green; text-align:center;" > Vücut Kitle Indexsiniz ' +
+            index +
+            " dir. Mükemmel ölçülere sahipsiniz";
+        } else if (index >= 25 && index < 30) {
+          info =
+            '<p style = "background-color:#eb0254; text-align:center; color:white;" > Vücut Kitle Indexsiniz ' +
+            index +
+            " dir. Fazla KİLOLUSUNUZ";
+        } else if (index >= 30 && index <= 35) {
+          info =
+            '<p style = "background-color:#eb0254; text-align:center;" > Vücut Kitle Indexsiniz ' +
+            index +
+            " dir. BİRİNCİ DERECE ŞİŞMANSINIZ";
+        } else if (index >= 35 && index < 45) {
+          info =
+            '<p style = "background-color:#eb0254; text-align:center;" > Vücut Kitle Indexsiniz ' +
+            index +
+            " dir. İKİNCİ DERECE ŞİŞMANSINIZ";
+        } else if (index > 45) {
+          info =
+            '<p style = "background-color:#eb0254; text-align:center;" > Vücut Kitle Indexsiniz ' +
+            index +
+            " dir. OBEZSİN ACİLEN KİLO VERMELİSİN";
+        } else {
+          info =
+            "Bilgileri doğru giriniz. Boyunuu nokta ile girmediğinizi kontrol ediniz.";
+        }
+
+        bilgi.innerHTML = info;
+      }
+    </script>
+  </body>
+</html>

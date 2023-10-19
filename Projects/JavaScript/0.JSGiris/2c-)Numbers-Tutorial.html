@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers Tutorial</title>
+</head>
+
+<body>
+
+    <script>
+        let num = 15.123456789;
+
+        // toplamda 3 basamaklı sayı kullan
+
+        //num = num.toPrecision(3);
+
+        // ondalık kısmı 3 basamakla sınırla
+
+        //num = num.toFixed(3);
+
+        // en yakın sayıya yuvarla
+
+        // num = Math.round(num);
+
+        // aşağı yuvarla
+
+        // num = Math.floor(num);
+
+        //yukarı yuvarla
+
+        //num = Math.ceil(num);
+
+        // 1,2,10,56,20 sayılarından en küçüğü ve en büyüğünü bul
+
+        //let num2 = Math.min(1, 2, 10, 56, 20);
+
+        let num2 = Math.max(1, 2, 10, 56, 20);
+
+        // sayı aralığını kullanıcının belirleyeceği rastgele bir sayı reyin
+
+        let min = 20;
+        let max = 50;
+
+        let rndm = Math.round(min + Math.random() * (max - min));
+
+
+        console.log(rndm);
+
+        /* Bir personelin yaptığı mesaiye göre aldığı maaşı hesapla.
+
+        ** Brüt maaş : 3700 TL
+        ** Brüt mesai : 10.3 TL
+
+        Ağustos ayı mesai toplamı 42 saat ise toplam brüt maaş nedir?
+
+        Brüt maaş üzerinden toplam kesinti oranı %25 ise alınacak toplam net maaş nedir ? */
+
+
+        let brutmaas = 3700;
+        let mesai = 10.3;
+        let mesaiSuresi = 42;
+        let toplamBrut = brutmaas + mesai * mesaiSuresi;
+        let kesinti = toplamBrut * 0.25;
+        let netMaas = toplamBrut - kesinti;
+
+
+        console.log(netMaas.toFixed(2) + ' TL');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        console.log(num2);
+        console.log(num);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+
+    <title>My Task List</title>
+
+    <style>
+        a {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container p-3">
+        <h1 class="app-title" id="header">To Do App</h1>
+        <div class="card">
+            <div class="card-header">
+                New Task
+            </div>
+            <div class="card-body">
+                <form id="addTaskForm">
+
+                    <select id="select" class="form-select" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+
+                    <div class="input-group mb-3">
+                        <input id="txtTaskName" name="taskName" type="text" class="form-control"
+                            placeholder="Type a new task" aria-describedby="btnAddNewTask">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit" id="btnAddNewTask">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="card mt-3">
+            <div class="card-header">
+                <h5>Task List</h5>
+                <a id="btnDeleteAll" href="#" class="btn btn-outline-danger btn-sm delete-all float-right">
+                    Delete All
+                </a>
+            </div>
+
+            <ul id="task-list" class="list-group">
+                <li class="list-group-item list-group-item-secondary">To do item
+                    <a href="#" class="delete-item float-right">
+                        <i class="fas fa-times"></i>
+                    </a>
+                </li>
+                <li class="list-group-item list-group-item-secondary">To do item
+                    <a href="#" class="delete-item float-right">
+                        <i class="fas fa-times"></i>
+                    </a>
+                </li>
+                <li class="list-group-item list-group-item-secondary">To do item
+                    <a href="#" class="delete-item float-right">
+                        <i class="fas fa-times"></i>
+                    </a>
+                </li>
+                <li class="list-group-item list-group-item-danger">To do item 
+                    <a href="#" class="delete-item float-right">
+                        <i class="fas fa-times"></i>
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
+
+
+    <script>
+        //LOCAL STORAGE
+        let val;
+        // Belli bir url ile ilgili değerleri tarayıcı kapansa dahi saklar. 
+
+        //set item -> Eleman atarken kullanılır.
+
+        const firstName = localStorage.setItem('firstName', 'Bugra');
+        const lastName = localStorage.setItem('lastName', 'TAN');
+        let hobbies = ['sinema', 'araba', 'gezmek'];
+        //get item           
+        //Değerleri görüntülemeyi sağlar.
+        console.log(localStorage);
+
+        val = localStorage.getItem('firstName');
+        val = localStorage.getItem('lastName');
+
+        //remove item 
+        // Değerleri silmeyi sağlar.
+        localStorage.removeItem('firstName');
+        localStorage.removeItem('lastName');
+
+        //clear
+
+        // Bütün bilgiler silinir. 
+        localStorage.clear();
+
+        // set array yo storage  // JASON.stringify
+
+        localStorage.setItem('hobbies', JSON.stringify(
+            hobbies)); // hobbiesi diziden objeye çevirdik. ve local storage a attık.
+
+        val = JSON.parse(localStorage.getItem('hobbies')); // local storage den dizi obje olarak çektik.
+
+        console.log(val); // Yazdırdık.
+
+
+        // SESSION STORAGE
+        /* 
+                const city = sessionStorage.setItem('city', 'İstanbul');
+                const countrey = sessionStorage.setItem('country', 'Türkiye');
+
+                console.log(sessionStorage);
+
+
+                // Belli bir url ile ilgili değerleri tarayıcı kapanırsa bilgiler silinir. 
+
+
+         */
+
+
+
+        // Locale veri ekleme
+
+        const a = localStorage.setItem('firstName', 'Bugra');
+
+
+        //Görüntüleme
+
+        val a = localStorage.getItem('a');
+
+
+
+
+
+        //finish
+    </script>
+
+</body>
+
+</html>

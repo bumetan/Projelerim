@@ -1,0 +1,33 @@
+body {
+  background-image: url("images/sample-image.jpg");
+}
+
+p {
+  margin: 3em;
+  padding: 10px;
+  text-align: justify;
+  background-color: rgb(172, 184, 195);
+  border-radius: 1em;
+  color: white;
+  background-color: rgba(125, 79, 42, 0.7);
+}
+
+.div1 {
+  margin: 10em 30em 10em 30em;
+  text-align: center;
+  background-color: rgba(193, 204, 215, 0.7);
+  border-radius: 1em;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+h1,
+h2 {
+  padding: 20px 20px 20px 20px;
+  text-align: center;
+  background-color: rgba(125, 79, 42, 0.7);
+  border-radius: 1em;
+  color: white;
+  margin-left: 5em;
+  margin-right: 5em;
+}

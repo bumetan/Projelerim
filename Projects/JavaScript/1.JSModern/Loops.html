@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops for - while</title>
+</head>
+
+<body>
+    <script>
+        //for loop
+
+        for (i = 0; i < 10; i++) {
+
+
+            if (i == 3) {
+                console.log('For En Sevdiğim sayı for ' + i + 'dir.');
+                continue
+            }
+
+            if (i == 6) {
+
+                console.log('For En sevmediğim sayı ' + i + ' dir');
+                break
+            }
+            console.log('For ' + i);
+
+        }
+
+        // For döngüsü ile matematiksel işlemler 
+
+        let sonuc = 1;
+        for (c = 10; c > 0; c--) {
+
+            if (c % 2 == 1) {
+                sonuc *= c;
+
+            }
+        }
+        console.log(sonuc);
+
+
+        // while loop
+
+        let a;
+        a = 0;
+
+        while (a < 10) {
+            console.log('while ' + a);
+            a++;
+
+        }
+
+
+        // Do-While Loop
+
+
+        let b = 0;
+
+        do {
+            console.log('Do-while ' + b);
+            b++;
+        } while (b < 10);
+
+
+        // Loops in Array § Objects
+
+        let car = ['BMW', 'Mercedes', 'Toyota'];
+
+        for (i = 0; i < car.length; i++) {
+
+            console.log(car[i]);
+        }
+
+        // for-in   //i car dizisindeki bütün elemanların index numarasını alır
+
+        for (let i in car) {
+
+            console.log(`index : ${i} value : ${car[i]}`);
+
+        }
+
+        //foreach 
+        // dizinin içerisindeki bütün elemanlara uygulanır. Aşağıda bir fonksiyon yazdık ve dizinin içerisi,ndeki bütün elemanlar sırasıyla item değişkeninin yerini aldı.
+
+        car.forEach(function (item) {
+
+            console.log(item);
+
+        });
+
+        let insan = [{
+                isim: 'Ada',
+                soyisim: 'Bilgi'
+            },
+            {
+                isim: 'Yiğit',
+                soyisim: 'Bilgi'
+            },
+            {
+                isim: 'Çınar',
+                soyisim: 'Turan'
+            },
+
+        ]
+
+        // Örnek for - for in for each kullanımı
+        for (let i = 0; i < insan.length; i++) {
+            console.log(insan[i].isim);
+        }
+        for (let i in insan) {
+
+            console.log(insan[i].soyisim);
+        }
+
+
+        insan.forEach(function (isimler) {
+
+            console.log(isimler);
+
+        });
+
+
+
+        // map : returns an array  ////// Diziye geri çevirir.
+
+        let val = insan.map(function (aaa) {
+            return aaa.isim + ' ' + aaa.soyisim;
+        });
+
+        console.log(val);
+
+
+        let sayilar = [1, 2, 3, 4, 5, 6];
+
+        let num = sayilar.map(function (n) {
+            return n * n;
+        });
+        console.log(sayilar);
+
+
+
+
+        // UYGULAMA
+
+        // Demo Loops : Sayı Tahmin Oyunu
+
+        /* 1-10 arası rastgele üretilen bir sayıyı aşağı yukarı ifadeleri ile buldurmaya çalışın.
+        
+        ** puanlama yapın
+        ** kullanıcı kaç kerede bileceğini belirtebilsin. */
+
+        let sayi = (Math.random(1, 10) * 10 + 1).toFixed(0);
+        console.log(sayi);
+        let tahmin, sayac = 0;
+        can = Number(prompt('Kaç kerede bilceksiniz = '));
+        hak = can;
+
+
+        while (hak > 0) {
+            hak--;
+            sayac++;
+            tahmin = Number(prompt('Bir Sayı giriniz'));
+            if (sayi == tahmin) {
+                console.log(`Tebrikler ${sayac} defada bildiniz.`);
+                console.log(`Toplam puanınız ${100-(100/can)*(sayac-1)}`);
+                break;
+            } else if (sayi > tahmin) {
+                console.log('Yukarı');
+                console.log(`Kalan hakkınız : ${hak}`)
+            } else {
+                console.log('Aşağı')
+                console.log(`Kalan hakkınız : ${hak}`)
+            }
+            if (hak == 0) {
+                console.log('Hakkınız bitti');
+            }
+        };
+
+
+        //finish
+    </script>
+    <a href="https://www.youtube.com/watch?v=M0JxrqE5644">SELA</a>
+</body>
+
+</html>

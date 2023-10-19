@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Literals</title>
+</head>
+
+<body>
+
+
+    <script>
+        // Template Literals
+
+        const name = 'bugra';
+        const city = 'İstanbul';
+        const yearOfBirth = 1993;
+
+        let val;
+
+        // val = 'my name is ' + name + ' I\'m ' + (2018 - yearOfBirth) + ' years old ' + ' and I live in ' + city;
+
+        val = `my name is ${name} I'm ${2018-yearOfBirth} years old and I live in ${city}`;
+
+
+        //ternary operator
+
+        val = `My name is ${name} and I'm ${(2018-yearOfBirth)?'over 18': 'under 18'} ant I live in ${city}`;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        console.log(val);
+    </script>
+
+</body>
+
+</html>

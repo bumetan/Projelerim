@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="div" ;></div>
+
+    <script>
+        // Date Object
+
+        let d = new Date();
+
+        // Get Methods   
+
+        console.log(d.getDate());
+        console.log(d.getDay());
+        console.log(d.getFullYear());
+        console.log(d.getHours());
+        console.log(d.getMonth());
+        console.log(d.getSeconds());
+        console.log(d.getMinutes());
+
+        // Set Methods
+
+        d.setFullYear(2020);
+        d.setMonth(5);
+        d.setHours(10);
+        d.setMinutes(20);
+
+
+        // DATE BAŞLANGIÇ TARİHİ 01 01 1970 00:00 DIR yani new Date(0) = 01 01 1970 00:00
+
+        let tarih = new Date(); // ŞU ANIN TARİHİNİ VERİR
+
+        document.write(tarih);
+        let tarih2 = new Date("March 5,2015 15:45:15");
+        document.write("</br>");
+
+        document.write(tarih2);
+        let tarih3 = new Date(93, 12, 1);
+        document.write("</br>");
+        document.write(tarih3);
+
+        let tarih4 = new Date(10, 10, 10, 10, 10, 10, 10);
+
+        let yil = tarih4.getFullYear();
+
+        document.write("</br>");
+
+        document.write(yil);
+
+        document.write("</br>");
+
+        document.write(tarih4);
+
+        // ANLIK SAAT GÖSTERİMİ 
+        function saatKac() {
+            let tarih5 = new Date();
+            let saat5 = tarih5.getHours();
+            let dakika5 = tarih5.getMinutes();
+            let saniye5 = tarih5.getSeconds();
+            document.getElementById("div").innerHTML = "Saat </br>" + saat5 + ":" + dakika5 + ":" + saniye5;
+        }
+
+        setInterval(saatKac, 1000);
+
+
+
+
+
+
+
+
+
+
+        console.log();
+    </script>
+</body>
+
+</html>

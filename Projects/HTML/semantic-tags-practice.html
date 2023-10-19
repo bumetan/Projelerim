@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic Tags Practice</title>
+</head>
+<style>
+    header {
+        border-radius: 2em;
+        background-color: black;
+        color: white;
+
+    }
+
+    nav ul:nth-child(1) li {
+
+        font-size: large;
+
+    }
+
+    aside {
+        border: 1px solid black;
+    }
+</style>
+
+
+<body>
+
+    <header>
+
+        <img src="images/sample-image.jpg" alt="" height="50px">
+
+        <nav>
+            <ul>Menü
+
+                <li>Genel</li>
+                <li>Hakkında</li>
+                <li>Kategoriler</li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <aside>
+        <h2>Kategoriler</h2>
+        <nav>
+            <ul>
+                <li>Kategori1</li>
+                <li>Kategori2
+                    <ul>
+                        <li><a href="Kategori1">Kategori2-1</a> </li>
+                        <li>Kategori2-2</li>
+                        <li>Kategori2-3</li>
+
+                    </ul>
+                </li>
+                <li>Kategori3
+
+                </li>
+            </ul>
+        </nav>
+
+
+    </aside>
+
+    <main>
+
+        <h1> En Çok Okunanlar</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti doloremque enim ipsam fugiat unde vitae
+            voluptate sint reprehenderit magnam impedit?</p>
+
+        <article id="all-articles">
+
+            <article>
+                <h2>HTML Nedir?</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quas, enim molestiae veniam
+                    reprehenderit provident suscipit voluptatibus nesciunt numquam porro, commodi ab non perferendis
+                    deserunt!</p>
+                <p>Buğra Mert TAN tarafından <time datetime="2025-01-05 20.00">2021 yılında</time> çalışılmıştır.</p>
+            </article>
+
+
+        </article>
+
+
+    </main>
+
+    <footer>Tüm hakları saklıdır.</footer>
+</body>
+
+</html>

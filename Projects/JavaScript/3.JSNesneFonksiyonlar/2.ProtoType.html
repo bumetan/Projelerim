@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProtoType</title>
+  </head>
+  <body>
+    <script>
+
+      
+      //INHERİTANCE
+
+      let Person = function (name, yearOfBirth, job) {
+        this.name = name;
+        this.yearOfBirth = yearOfBirth;
+        this.job = job;
+      };
+
+      Person.prototype.calculateAge = function () {
+        return 2022 - this.yearOfBirth;
+      };
+
+      Person.prototype.firstName = function () {
+        return this.name;
+      };
+
+      Person.prototype.lastName = "TAN";
+
+      let bugra = new Person("Bugra", 1993, "IT");
+
+      console.log(bugra);
+      console.log(bugra.calculateAge());
+      console.log(bugra.hasOwnProperty("name")); // True verir.
+      console.log(bugra.hasOwnProperty("lastName")); // False verir.
+
+
+
+// Prototype kısmından alınan bilgiler direkt aktarılır, kopyası gitmez. 
+
+
+
+
+
+    </script>
+  </body>
+</html>

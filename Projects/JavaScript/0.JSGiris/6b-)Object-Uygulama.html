@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var personel1 = {
+
+            name: 'Ali',
+            surname: 'Yılmaz',
+            cinsiyet: 'Erkek',
+            telefon: '2122122222',
+            adres: ' İzmit',
+            meslek: 'Bilgisayar Mühendisi',
+            diller: ['İngilizce', 'Almanca'],
+            hobiler: ['Sinema', 'Spor', 'kitap okumak']
+
+        };
+
+        for (i = 0; i <= (personel1.diller).length; i++) {
+            console.log((personel1.diller));
+
+        };
+
+        for (n = 0; n <= (personel1.hobiler).length - 1; n++) {
+            console.log((personel1.hobiler)[n]);
+        }
+
+        var personeller = [{
+
+                name: 'Ali',
+                surname: 'Yılmaz',
+                cinsiyet: 'Erkek',
+                telefon: '2122122222',
+                adres: ' İzmit',
+                meslek: 'Bilgisayar Mühendisi',
+                diller: ['İngilizce', 'Almanca'],
+                hobiler: ['Sinema', 'Spor', 'kitap okumak']
+
+            },
+            {
+
+                name: 'Pınar',
+                surname: 'Ogulları',
+                cinsiyet: 'Kadın',
+                telefon: '2122122222',
+                adres: ' İzmit',
+                meslek: 'Bilgisayar Mühendisi',
+                diller: ['İngilizce', 'Almanca'],
+                hobiler: ['Sinema', 'Spor', 'kitap okumak']
+
+            },
+            {
+
+                name: 'Ahmet',
+                surname: 'Yılmaz',
+                cinsiyet: 'Erkek',
+                telefon: '2122122222',
+                adres: ' İzmit',
+                meslek: 'Bilgisayar Mühendisi',
+                diller: ['İngilizce', 'Almanca', 'Fransızca'],
+                hobiler: ['Sinema', 'Spor', 'kitap okumak']
+
+            },
+
+        ];
+
+        console.log(personeller.length);
+
+        for (b = 0; b <= personeller.length-1; b++) {
+            //console.log(personeller[b]);
+            console.log((personeller[b].name) + (personeller[b].surname));
+            console.log(personeller[b].diller);
+
+        }
+    </script>
+
+</body>
+
+</html>

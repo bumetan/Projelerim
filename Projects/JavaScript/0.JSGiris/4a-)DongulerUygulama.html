@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 1. UYGULAMA 10-100 ARASINDAKİ SAYILARI YAZDIRIN
+        for (n = 0; n <= 100; n++) {
+
+            if (n >= 10) {
+
+                console.log(n);
+
+            }
+
+
+        }
+
+        // 2. UYGULAMA 10 - 100 ARASINDAKİ SAYILARI 5'ER 5'ER YAZDIRIN
+
+        let l = 0;
+
+        while (l <= 100) {
+
+            if (l >= 10) {
+                console.log(l);
+            }
+            l = l + 5;
+
+        }
+
+        // 3. UYGULAMA Login Kontrolü : Kullanıcı adı ve parola kontrolünden geçene kadar kullanıcı bilgilerini kullanıcıdan isteyin.
+        var k_username = prompt('Kullanıcı Adını Giriniz.');
+        var k_password = prompt("Şifrenizi Giriniz");
+        var giris = 0;
+        var loggedFailed = true;
+
+
+        var username = "guest";
+        var password = "12345";
+        //single entry single exit (tek giris tek cikis)
+        while (loggedFailed && giris<3) {
+
+            if ((k_username == username) && (k_password == password)) {
+                alert("Giriş Yapabilirsiniz.");
+                loggedFailed = false;
+            } else if (((k_username !== username) && (k_password !== password))) {
+                giris++;
+                window.alert(giris + '. Yanlış Giriş');
+                var k_username = prompt('Kullanıcı Adını Giriniz.');
+                var k_password = prompt("Şifrenizi Giriniz");
+
+                if (giris >= 3) {
+                    alert("Artık Giriş Yapamazsınız");
+                    //break;
+                }
+
+            } else {
+
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+
+<body>
+
+    <script>
+        //s
+
+        // "Bmw, Mercedes, Opel, Mazda" elemanlarına sahip bir dizi oluşturun.
+
+        let val = ['BMV', 'Mercedes', 'Opel', 'Mazda'];
+
+        // Dizi kaç elemanlıdır ?
+
+        console.log(val.length);
+
+        // Dizinin ilk ve son elemanı nedir ;?
+
+        console.log(val[0]);
+
+        console.log(val[val.length - 1]);
+
+        // 'Renault' değerini dizinin sonuna ekleyin.
+
+        val.push('Renault');
+
+        console.log(val);
+
+        // 'Toyota' değerini dizinin başına ekleyin
+
+        val.unshift();
+
+        console.log(val);
+
+        // 'Renault' değerini siliniz.
+
+        val.pop();
+        console.log(val);
+
+        console.log(val);
+        // Dizi elemanlarını ters çevirin.
+        val.reverse();
+        console.log(val);
+        // Dizi elemanlarını alfabetik olarak sıralayınız.
+
+        val.sort();
+        console.log(val);
+
+        // [1,2,5,80] dizisini sıralayın.
+
+        let valsayi = [1, 2, 5, 90];
+
+        console.log(valsayi.sort());
+
+        // 'Opel' değerini dizinin bir elemanımıdır?
+        console.log(val.indexOf('Opel'));
+        console.log(val.includes('Opel'));
+
+
+        // var str = "Chevrolet,Dacia";
+        //ifadesini diziye çeviriniz.
+
+        var str = 'Chevrolet,Davia';
+
+        let yenistr = str.split(',');
+
+        console.log(yenistr);
+
+        // Oluştutulan 2 dizinin elemanlarını bir başka dizi ile birleştirin.
+
+        let x = yenistr.concat(val);
+
+        console.log(x);
+
+        // Oluşturulan diziden son 2 elemanı siliniz.
+
+        let y;
+
+        y = x.splice(4, 2);
+
+        console.log(x);
+
+        let array = ['BMV', 'Mercedes', 'Opel', 'Mazda'];
+        array.splice(3, 1);
+
+        console.log(array);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //son
+    </script>
+
+</body>
+
+</html>

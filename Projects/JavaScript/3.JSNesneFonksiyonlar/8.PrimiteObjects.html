@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PRIMITE & OBJECT</title>
+  </head>
+  <body>
+    <script>
+      var a = 10;
+      var b = a;
+
+      console.log(a);
+      console.log(b);
+
+      var obj1 = {
+        name: "Buğra",
+        age: 28,
+      };
+
+      var obj2 = obj1;
+      obj1.age = 12;
+
+      console.log(obj1.age);
+      console.log(obj2.age);
+
+      var num = 50;
+      var account = {
+        name: "Buğra",
+        accountNumber: "1233456",
+      };
+
+      function update(a, b) {
+        a = 100;
+        b.accountNumber = "222222";
+      }
+
+      update(num, account);
+
+      console.log(num);
+      console.log(account);
+
+      var products = [
+        { name: "Product Name", price: 1000 },
+        { name: "Product Name", price: 1000 },
+        { name: "Product Name", price: 1000 },
+        { name: "Product Name", price: 1000 },
+        { name: "Product Name", price: 1000 },
+        { name: "Product Name", price: 1000 },
+        { name: "Product Name", price: 1000 },
+      ];
+
+      function filterProducts(prd) {}
+
+      filterProducts(products);
+      
+    </script>
+  </body>
+</html>

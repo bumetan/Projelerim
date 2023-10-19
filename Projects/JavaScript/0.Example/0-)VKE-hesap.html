@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        
+        function indexhesapla() {
+            
+            return Number((kilo / (boy * boy) * 10000).toFixed(2));
+        }
+
+        var [kilo, yas, boy] = [prompt("kilonuzu giriniz"), prompt("Yaşınızı Giriniz"), prompt("Boyunuzu giriniz"), ];
+
+        if (indexhesapla() < 18.4) {
+
+            document.write("Beden Kitle İndeksiniz " + indexhesapla() + " dır Kilo almalısınız");
+
+        } else if (indexhesapla() >= 18.4 && indexhesapla() < 24.9) {
+
+            document.write("Beden Kitle İndeksiniz " + indexhesapla() + " dır HARİKA");
+
+        } else if (indexhesapla() >= 25 && indexhesapla() < 30) {
+
+            document.write("Beden Kitle İndeksiniz " + indexhesapla() + " dır KİLOLUSUNUZ");
+
+        } else if (indexhesapla() >= 30 && indexhesapla() < 35) {
+
+            document.write("Beden Kitle İndeksiniz " + indexhesapla() + " dır BİRİNCİ DERECE OBEZSİNİZ");
+
+        } else if (indexhesapla() >= 40 && indexhesapla() < 45) {
+
+            document.write("Beden Kitle İndeksiniz " + indexhesapla() + " dır İKİNCİ DERECE OBEZSİNİZ");
+
+        } else {
+            document.write("YANLIŞ DEĞER GİRDİNİZ DEĞERLERİNİZİ KONTROL EDİNİZ");
+        }
+
+        
+    </script>
+</body>
+
+</html>

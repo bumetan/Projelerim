@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Call, Apply & Bind
+
+
+        var welcome = function(a, b) {
+            console.log(
+                "Welcome " + this.name + ". Are you interested in " + a + " and " + b
+            );
+        };
+
+        var bugra = {
+            name: "Buğra",
+        };
+
+        var mert = {
+            name: "Mert",
+        };
+
+        //NOT : Bu methodlarda ilk olarak çağırılacak obje sonra parametler yazılır. Obje gönderilmiyorsa null yazılır.
+
+        // apply parametreleri dizi şeklinde gönderir.
+
+
+        welcome.call(bugra, "JavaScript", "angular");
+        welcome.call(mert);
+
+        welcome.apply(bugra[("JavaScript", "Angular")]);
+        welcome.apply(mert[("JavaScript", "Angular")]);
+
+        welcomeBugra = welcome.bind(bugra);
+        welcomeBugra("asp.net", "angular");
+
+        //-------------------------------------------------------------------------------------------------
+
+        // UYGULAMA 
+        // Demo : Numeric Range
+
+        var num = {
+            min: 0,
+            max: 100,
+            checkNumericRange: function(value) {
+                if (typeof value !== "number") {
+                    return false;
+                } else {
+                    return value >= this.min && value <= this.max;
+                }
+            },
+        };
+
+        console.log(num.checkNumericRange(-20));
+        console.log(num.checkNumericRange(20));
+
+        var num1 = {
+            min: 50,
+            max: 60,
+        };
+        console.log(num.checkNumericRange.call(num1, 65));
+        console.log(num.checkNumericRange.apply(num1, [65]));
+
+        var checkNumber = num.checkNumericRange.bind(num1);
+        console.log(checkNumber(56));
+        //-------------------------------------------------------------------------
+        let numaralar = {
+            maxnum: 25,
+            minnum: 15,
+            ortalamanum: function(sayi) {
+                if (sayi >= this.minnum && sayi <= this.maxnum) {
+                    console.log(sayi + " Aralıktaki bir sayıdır");
+                } else {
+                    console.log(
+                        `Tekrar sayı giriniz ${sayi} sayısı aralıktaki bir sayı değildir.`
+                    );
+                }
+            },
+        };
+
+        var numara1 = {
+            maxnum: 30,
+            minnum: 22,
+        };
+        numaralar.ortalamanum.call(numara1, 29);
+        numaralar.ortalamanum.apply(numara1, [32]);
+
+        // bind (bağlama) metodu ile seçeceğimiz değişkeni ilgili fonksiyona bağlıyoruz.
+
+        let baglaFonksiyon = numaralar.ortalamanum.bind(numara1);
+
+        baglaFonksiyon(25);
+    </script>
+</body>
+
+</html>

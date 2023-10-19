@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+
+<body>
+
+    <script>
+        // Arrays
+
+dsadsad
+        let names = ['Bugra', 'Mert', 'TAN'];
+        let years = [1990, 1993, 3, 5];
+        let mix = ['Bugra', 1993, null, undefined, ['sinema', 'kitap']];
+
+        // get array item
+
+        console.log(mix[2]);
+
+        // set array item   // seçilen elemanı değiştirir.
+
+        names[0] = 'Degis';
+
+        // add item 
+
+        years.push(1986); // dizinin sonuna ekler
+
+        years.unshift(1955); // Dizinin başına ekler
+
+        //remove item
+
+        years.pop(); // sonraki elemanı siler
+
+        years.shift(); // baştaki elemanı siler.
+
+        //indexof
+
+        let index = names.indexOf('Mert');
+        console.log('index : ' + index);
+
+        // reverse //
+
+        names
+            .reverse(); // index numaralarını tersine çevirir, örneğin bir dizi içerisindeki [1,2,3,4,5] , [5,4,3,2,1] e çevirir.
+
+        //sort // Sayısal ve alfabetik olarak sıralama yapar
+        years.sort();
+
+        //concat // iki dizeyi birleştirir
+
+        let val = years.concat(names);
+        console.log(val);
+        // Bu örnekte years dizesine names dizisini ekledik.
+
+        //splice 
+
+        names.splice(2, 0, 'ekle'); // Mantık (Hangi Elemadan sonra başla,Kaç tane eleman sil, Eleman ekle)
+
+        // bu örnekte 2. elemandan sonra 'ekle' yi ekledik. 0 yazdığımız için birşey silmedi 1 ve ya 2 yazsaydın 2. elemandan sonraki 1. veya 1.2. elemanı silecekti.
+
+        //find
+
+
+        //filter
+
+
+        function over18(year) {
+
+            let age = 2018 - year;
+            return age >= 18;
+
+        }
+
+        console.log(over18(1990));
+
+        let val = years.find(over18);
+        console.log(val);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        console.log(1);
+    </script>
+
+</body>
+
+</html>

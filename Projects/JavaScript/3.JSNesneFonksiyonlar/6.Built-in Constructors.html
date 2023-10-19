@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Build-in Constructor</title>
+  </head>
+  <body>
+    <script>
+      // STRİNG
+
+      var str1 = "Buğra"; // ----> String şeklinde oluşturur.
+      var str2 = new String("Buğra"); // ------> Obje şeklinde oluşturur. //new kullandığımız için constructor şeklinde olur.
+
+      if (str1 === "Buğra") {
+        console.log("yes");
+      } else {
+        console.log("no");
+      }
+
+      String.prototype.repeat = function (n) {
+        return new Array(n + 1).join(this);
+      };
+      console.log("Buğra".repeat(4));
+
+      // Number
+      var num1 = 10;
+      var num2 = new Number(10);
+
+      // Boolean
+      var bool1 = true;
+      var bool2 = new Boolean(true);
+
+      //Object
+      var obj1 = {
+        name: "Buğra",
+      };
+
+      var obj2 = new Object({
+        name: "Buğra",
+      });
+
+      // Array
+
+      var arr1 = ["Buğra", "Mert", "TAN"];
+      var arr2 = new Array("Buğra", "Mert", "TAN");
+
+      Array.prototype.remove =
+        Array.prototype.remove ||
+        function (member) {
+          var index = this.indexOf(member);
+
+          if (index > -1) {
+            this.splice(index, 1);
+          }
+          return this;
+        };
+
+      arr1.remove("Mert");
+      console.log(arr1);
+    </script>
+  </body>
+</html>

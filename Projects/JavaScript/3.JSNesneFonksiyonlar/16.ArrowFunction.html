@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // Arrow Functions
+
+
+        let welcomeES5 = function() {
+            console.log("Hello from ES5");
+        }
+        welcomeES5()
+
+        // Fonksiyonda birden fazla satır kullanılmayacaksa parantez içine almayabiliriz.
+        let welcomeES6 = () =>
+            console.log('Hello ES6')
+        welcomeES6();
+
+        //with parameters
+
+        //ES5
+        let multiplyES5 = function(x, y) {
+            return x * y
+        }
+        console.log(multiplyES5(3, 5));
+
+        //ES6
+
+        // parantez kullanacaksan return yazmamız gerekiyor kullanmayacaksak yazmıyoruz.
+        let multiplyES6 = (x, y) => x * y;
+        let multiplyES6_2 = (x, y) => {
+            return x * y
+        };
+        console.log(multiplyES6(3, 4))
+        console.log(multiplyES6_2(5, 6))
+            //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        //ES5 
+        let splitES5 = function(text) {
+            return text.split(' ');
+        }
+        console.log(splitES5("Buğra Mert TAN"));
+        //ES6
+        let splitES6 = text => text.split(' ');
+        console.log(splitES6("TAN Buğra Mert"));
+
+        let getProductES5 = function(id, name) {
+            return {
+                id: id,
+                name: name
+            }
+        }
+        console.log(getProductES5("1", "Samsung S10"));
+
+        let getProductES6 = (id, name) => ({
+            id: id,
+            name: name,
+        })
+        console.log(getProductES6("1", "Iphone 7"));
+
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        // ES5
+
+        const phones = [{
+            name: "Iphone13",
+            price: 12000
+        }, {
+            name: "Iphone12",
+            price: 9000
+        }, {
+            name: "IphoneX",
+            price: 7000
+        }]
+
+        let pricesES5 = phones.map(function(phone) {
+            return phone.price;
+        })
+
+        // ES6
+        let pricesES6 = phones.map(phone => phone.price);
+
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        // ES5
+        const arr = [1, 2, 3, 6, 10, 20, 30, 50, 61, 79];
+        let evenES5 = arr.filter(function(a) {
+            return a % 2 == 0;
+        })
+        console.log(evenES5);
+        //ES6
+        let evenES6 = arr.filter(a => a % 2 == 0);
+
+        console.log(evenES6);
+    </script>
+</body>
+
+</html>

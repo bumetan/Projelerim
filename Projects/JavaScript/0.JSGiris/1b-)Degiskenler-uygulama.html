@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Değişkenler Uygulama</title>
+</head>
+
+<body>
+
+    <script>
+        // ** Bir müşterinin aşağıdaki bilgileri için değişken oluşturunuz.
+
+        // Müşteri adı
+        // Müşteri soyadı
+        // Müşteri TC Kimlik No
+        // Müşteri Sipariş Toplamı
+        // Müşteri Cinsiyeti
+        // Müşteri Adres Bilgisi
+        // Müşteri Hobileri
+
+        let customerName = "Buğra";
+        let customerSurname = "TAN";
+        let customerId = 312312312312;
+
+        let order1 = '100';
+        let order2 = '200';
+
+        //object
+
+        let adress = {
+            city: 'İstanbul',
+            street: 'Okul Önü',
+            no: 42,
+        }
+
+        //array
+
+        let hobbies = ['Yemek Yemek', 'Müzik Dinlemek', 'Spor'];
+
+        // Aşağıdaki siparişlerin toplamını hesaplayınız.
+        let total;
+        total = Number(order1) + Number(order2);
+        console.log(total);
+
+        // Aşağıdaki siparişlerin toplamını kesirli ve tam sayı olarak hesaplayınız. Daha sonra onları tamsayı olarak toplayınız.
+
+        let order3 = "20.5";
+        let order4 = '36.75';
+
+        let total2 = parseFloat(order3) + parseFloat(order4);
+        console.log(total2);
+
+        let total3 = parseInt(order3) + parseInt(order4);
+        console.log(total3);
+
+        let allTotals = total2 + total3;
+        console.log(parseInt(allTotals));
+
+        // Aşağıkda verilen doğum yılına göre yaş hesaplayınız.
+
+        const yearOfBirth = 1986; // Yaş değişmeyeceği için const ile yazdık. 
+
+        let age = (new Date().getFullYear()) - yearOfBirth;
+        console.log(age);
+
+        // Aşağıdaki string ifadenin karakter sayısını bulunuz.
+
+        let course = 'Modern JavaScript Kursu';
+        console.log(course.length);
+    </script>
+
+</body>
+
+</html>

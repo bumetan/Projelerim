@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let Person = function (name) {
+        this.name = name;
+      };
+
+      Person.prototype.Introduce = function () {
+        console.log("Hello my name is " + this.name);
+      };
+
+      let Teacher = function (name, branch) {
+        Person.call(this, name);
+        this.branch = branch;
+      };
+
+      Teacher.prototype = Object.create(Person.prototype);
+      Teacher.prototype.constructor = Teacher;
+      Teacher.prototype.teach = function () {
+        console.log("I Teach " + this.branch);
+      };
+
+      let t1 = new Teacher("Buğra", "Information Tecnology");
+      t1.Introduce();
+      t1.teach();
+
+      let Student = function (name, number) {
+        Person.call(this, name);
+        this.number = number;
+      };
+
+      Student.prototype = Object.create(Person.prototype);
+      Student.prototype.constructor = Student;
+      Student.prototype.study = function () {
+        console.log(
+          "My student number is " + this.number + " I already studied hard"
+        );
+      };
+
+      let s1 = new Student("Mert", 100);
+      s1.Introduce();
+      s1.study();
+      console.log(s1);
+
+      let HeadMaster = function (name, branch) {
+        if (!(this instanceof HeadMaster)) {
+          return new HeadMaster(name, branch);
+        }
+        Teacher.call(this, name, branch);
+      };
+
+      HeadMaster.prototype = Object.create(Teacher.prototype);
+      HeadMaster.prototype.constructor = HeadMaster;
+      HeadMaster.prototype.shareTask = function () {
+        return "Share Task Fonksiyonu";
+      };
+
+      let teacher1 = new Teacher("BUĞRA", "BİLGİSAYAR");
+      console.log(teacher1);
+
+      let HeadMaster1 = HeadMaster("Buğra", "yok");
+      console.log(HeadMaster1.shareTask());
+    </script>
+  </body>
+</html>

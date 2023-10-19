@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator</title>
+</head>
+
+<body>
+
+    <h1>Advandec ;JavaScript : Object & Functions</h1>
+    <div>div</div>
+    <div>div</div>
+    <div>div</div>
+
+    <script>
+        // Spread Operator
+
+        let getTotal = (a, b, c) => a * b * c;
+
+        let numbers = [10, 20, 30];
+
+        //ES5
+        console.log(getTotal.apply(null, numbers));
+
+        //ES6 
+        console.log(getTotal(...numbers));
+
+
+        let arr1 = ["two", "three"]
+        let arr2 = ["one", "four", "five"]
+        let arr3 = ['one', ...arr1, 'four', 'five'] //-> araya arr1 i ekledik // ES6 da kullanışlı bir özellik
+
+        arr1.push(...arr2); // iki diziyi birleştirdik -> sona ekledik
+        arr1.unshift(...arr2); // iki diziyi birleştirdik -> başa ekledik
+        console.log(arr1);
+
+        let h1 = document.querySelector('h1')
+        let divs = document.querySelectorAll('div')
+        let tags = [h1, ...divs];
+        tags.forEach(tag => tag.style.color = 'red');
+        console.log(tags);
+    </script>
+
+</body> // ES6 Rest parameters örnek let katinial = (kati, ...degerler) => { return degerler.map((item) => kati * item); } console.log(katinial(2, 3, 4, 5, 8, 9, ));
+</script>
+
+</body>
+
+</html>

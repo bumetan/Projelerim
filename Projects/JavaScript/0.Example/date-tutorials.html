@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Tutorials</title>
+</head>
+
+<body>
+
+    <script>
+        let tarih = new Date();
+
+        console.log(tarih.getDate());
+        console.log(tarih.getMonth() + 1);
+        console.log(tarih.getFullYear());
+
+        let dtA = new Date('12/28/2021'); // Tarihi aldık ay gün yıl olarak
+        console.log(dtA);
+        //--------------------------------------------------------------------------------
+
+
+        let eskiTarih = new Date('1/1/1990'); // 1-1-1990 Tarihini aldık
+
+        let eskiTarihGun = eskiTarih.getDate(); // Günü bir değişkene atadık.
+
+        eskiTarih.setDate(eskiTarihGun - 1); // Günü bir eksilttik.
+
+        console.log(eskiTarih); // Artık tarih yazdığımız tarihten 1 gün önce.
+
+        //---------------------------------------------------------------------------------
+
+        // 2 Tarih arasında geçen zamanı bulunuz.
+
+        let fark = tarih - eskiTarih; // Tarih arasındaki toplam geçen saliseyi verir. 
+        console.log(fark);
+
+
+        var saniye = fark / 1000;
+        console.log('Saniye : ' + saniye);
+
+        var dakika = saniye / 60;
+        console.log('Dakika : ' + dakika);
+
+        var saat = dakika / 60;
+        console.log('Saat : ' + saat);
+
+        var gun = saat / 24;
+        console.log('Gün : ' + gun);
+
+
+        // Yaş hesaplama nasıl yapılır
+
+        // Date.now() Şimdinin tarihini alıyor.
+
+        let birthday = new Date('8/1/1985'); // Tarihi Belirledik.
+        var ageFark = Date.now() - birthday.getTime(); // Şimdiden doğduğu tarihi çıkardık. Saniye değeri olarak aldık.
+        let ageTarih = new Date(ageFark); //Saniyeyi bir numberdi biz Tekrar tarih olarak atadık.
+        let aradakiFark = ageTarih.getFullYear() - 1970;
+        // Yılı seçtik ve 1970 i çıkardık ... JS de tarih 1970 den başladığı için hesaplamalarda çıkartılır.
+        console.log(aradakiFark); // Console yazdırdık.
+
+
+
+
+        // 2. örnek kendi doğum günümü hesapladım.
+        let BugraDogum = new Date('9/28/1993');
+        let simdi = Date.now();
+        let bugrafark = simdi - BugraDogum.getTime();
+        let BugraYas = new Date(bugrafark);
+        let sonuc = BugraYas.getFullYear() - 1970;
+        console.log(sonuc);
+
+
+
+
+        // Yaşımı hesapla son örnek
+
+        let BugraDogum2 = new Date('9/28/1993');
+        let simdiaa = Date.now();
+        let yasfarki = simdiaa - BugraDogum2.getTime();
+        let arasindakiFark = new Date(yasfarki);
+        let sonucaaa = arasindakiFark.getFullYear() - 1970;
+
+        console.log(sonucaaa);
+
+
+        // X inb yasini hesapla
+
+        let x = new Date('12/3/2001');
+        let xzaman = Date.now() - x.getTime();
+        let xtarih = new Date(xzaman);
+        console.log(xtarih.getFullYear() - 1970);
+    </script>
+
+</body>
+
+</html>

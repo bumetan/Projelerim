@@ -1,0 +1,59 @@
+.signup-title {
+  margin-top: 4vh;
+  text-align: center;
+  color: #396eb0;
+}
+
+.signup-form {
+  width: 50vw;
+  margin: 20px auto;
+}
+
+.signup-form label:not([for="agree-terms"]),
+.signup-form input:not([type="checkbox"]),
+.signup-form option,
+.signup-form select {
+  display: block;
+  width: 100%;
+  margin: 1vh 0;
+  padding: 1vh;
+  color: #396eb0;
+}
+
+.signup-form button {
+  margin: 20px auto;
+  display: block;
+}
+
+.signup-form input:not([type="checkbox"]):focus,
+.signup-form select:not([type="checkbox"]):focus {
+  outline: none;
+  background-color: yellow;
+  border: 1px solid greenyellow;
+}
+
+.signup-form input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #2e4c6d;
+  vertical-align: bottom;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.signup-form input[type="checkbox"]:hover {
+  background: gray;
+}
+.signup-form input[type="checkbox"]:checked {
+  background: var(--black);
+}
+/*  Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+  .signup-form {
+    width: 90%;
+    margin: 20px 20px;
+  }
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p style="background-color: red;"> <a href="https://vizyongunluk.com">ENES AYGÜN</a> </p>
+    <p></p>
+    <p></p>
+    <p></p>
+
+
+    <script>
+        // ************************************* FOR DÖNGÜSÜ ****************************************************
+
+        let province = [prompt('1.Şehiri Giriniz.'), 'Ankara', 'Elazığ', 'Aydın', 'Van'];
+
+
+        for (var i = 0; i < province.length; i++) {
+            console.log(province[i]);
+        }
+
+
+        for(a=0; a<=1; a++) {
+            console.log(a);
+        }
+
+
+        //let province = [prompt(i + '.Şehiri Giriniz.'), 'Ankara', 'Elazığ', 'Aydın', 'Van'];
+
+
+        /*let province = [prommpt(provinceNumber++);
+
+        for (var provinceNumber = 0; provinceNumber < 5; provinceNumber++) {
+            console.log(provinceNumber);
+        }
+
+        // let province = [prompt(provinceNumber)];
+        */
+
+
+        // ***************************************** WHILE DÖNGÜSÜ ************************************************
+
+        /*while (koşul) {
+
+
+            koşul sağlanırsa çalışacak kodlar
+  
+                        }
+
+                        */
+
+        let y = 1;
+
+        while (y <= 10) {
+            console.log(y);
+            y++;
+        }
+
+        // **************************************** UYGULAMALAR *****************************************************
+
+
+        //Buğra'nın sahip olduğu araçları 1 atlayarak göster (for ile)
+
+        let BugrasCar = ['Fiat', 'Opel', 'Kawasaki', 'Pulsar'];
+
+        for (start = 0; start <= BugrasCar.length; start++) {
+
+            if (start % 2 == 0) {
+                console.log(BugrasCar[start]);
+            }
+
+        }
+
+
+
+        // Haftanın Günlerini 2 atlayarak göster (while ile)
+        let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+        let firstNumber = 0;
+
+        while (firstNumber <= days.length) {
+
+            if (firstNumber % 2 == 0) {
+
+                console.log(days[firstNumber]);
+            }
+            firstNumber++;
+        }
+        /* ÖRNEK
+        var l = 0;
+        while (l <= 10) {
+            if (l % 2 == 0) {
+                console.log(BugrasCar[l]);
+            }
+            l++;
+        }
+        */
+
+        // ****************************************  DO - WHİLE DÖNGÜSÜ ******************************************* 
+
+        // DO - YAP DEMEK // WHİLE İKEN DEMEK 
+
+        // While da önce sorgu sorulur doğruysa yazar. Do da önce döngüyü yazar sonra while geçer.
+
+
+        var sayi = 20;
+        do {
+            console.log(sayi + "</br>");
+            sayi--;
+        } while (sayi >= 0);
+
+        /************** */
+
+        let sayi1 = 20;
+        while (sayi1 >= 0) {
+
+            document.write(sayi1 + "<br>" + "WHILE CONTROL <br>");
+            sayi1--;
+        }
+
+        // ******************************************* CONTİNUE & BREAK ************************************************ 
+
+        // WHİLE VE FOR DÖNGÜLERİNDE SORUNSUZ BİR ŞEKİLDE ÇALIŞIR
+
+        // ********************* BREAK *********************
+
+        for (i = 0; i <= 10; i++) {
+
+            if (i == 5) {
+                break;
+            }
+            document.write(i + "</br>");
+        }
+
+        // break döngüde belirtilen koşul geçerliyse döngüyü sonlandırır.
+
+        // ********************* CONTİNUE *********************
+
+        // continue döngüde velirtilen koşul geçerli ise onu atlar devam eder. 
+
+        for (s = 0; s <= 30; s++) {
+
+            if (s % 5 == 0) {
+
+                continue;
+            }
+            document.write(s + ' Bu sayıdır Continue ÖRNEĞİ </br>');
+        }
+
+        while (sayi <= 30) {
+            if (s % 5 == 0) {
+                sayi++;
+                continue;
+            }
+            document.write(sayi + "</br>");
+            sayi++;
+        }
+
+        // sayi yi başta sonra bir arttırdık ki sonsuz döngüye girmesin.
+    </script>
+
+
+
+
+
+</body>
+
+</html>

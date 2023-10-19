@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callback Functions</title>
+  </head>
+  <body>
+    <script>
+      /*   function MultipleByTwo(a, b, c) {
+          let arr = [];
+
+          for (let i = 0; i < 3; i++) {
+            arr[i] = arguments[i] * 2;
+          }
+          return arr;
+        }
+        function addOne(a) {
+          return a + 1;
+        }
+
+        val = MultipleByTwo(5, 10, 20);
+        //val = addOne(10);
+        for (let i = 0; i < val.length; i++) {
+          val[i] = addOne(val[i]);
+        }
+
+        console.log(val); */
+
+      // YUKARIDAKİ GİBİ YAPMAK YERİNE argumentin sonuna callback eklenir.
+
+      function MultipleByTwo(a, b, c, callback) {
+        let arr = [];
+
+        if (callback && typeof callback === "function") {
+          for (let i = 0; i < 3; i++) {
+            arr[i] = callback(arguments[i] * 2);
+          }
+        }
+        return arr;
+      }
+      function addOne(a) {
+        return a + 1;
+      }
+      function addTwo(a) {
+        return a + 2;
+      }
+      function addThere(a) {
+        return a + 3;
+      }
+
+      val = MultipleByTwo(5, 10, 20, addOne);
+      val = MultipleByTwo(5, 10, 20, addTwo);
+      val = MultipleByTwo(5, 10, 20, function (a) {
+        return a + 15;
+      });
+
+      console.log(val);
+    </script>
+  </body>
+</html>

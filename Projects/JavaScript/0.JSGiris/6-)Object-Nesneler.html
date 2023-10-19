@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+var marka = ['Opel', 'Toyota','Mazda'];
+var model = ['Corsa','Yaris','CX-3'];
+var Yil = ['2015','2015','2016'];
+
+console.log(marka[0] + ' ' + model[0] + ' ' + Yil[0]);
+
+
+var opel = ['Opel', 'Corsa', '2015'];
+var toyota = ['Toyota', 'Yaris', '2012'];
+var mazda = ['Mazda','CX-3','2016'];
+
+console.log(opel); */
+
+        // NORMALDE YUKARIDAKİ GİBİ YAPIYORUZ AMA ARTIK OBJE MODELİ İLE YAPACAĞIZ.
+
+
+        //1. Yöntem 
+        var opel = {
+
+            marka: 'Opel',
+            model: ' Corsa',
+            yil: '2015',
+            renk: 'mavi',
+            otomatik: true,
+
+        };
+
+        console.log(opel.marka);
+        console.log(opel.otomatik);
+        console.log(opel['renk']);
+
+
+        //2. Yöntem
+
+        var toyota = new Object();
+
+        toyota.marka = 'Toyota';
+        toyota.model = 'Yaris';
+        toyota.yil = '2012';
+        toyota.renk = 'kırmızı';
+        toyota.otomatik = true;
+
+        console.log('Toyota Yılı : ' + toyota.yil);
+
+
+        // OBJELERİ DİZİ OLARKA YERLEŞTİRME
+
+        var arabalar = [{
+                marka: 'Opel',
+                model: ' Corsa',
+                yil: '2015',
+                renk: 'mavi',
+                otomatik: true,
+            },
+            {
+                marka: 'Toyota',
+                model: 'Yaris',
+                yil: '2012',
+                renk: 'kırmızı',
+                otomatik: true,
+            }
+        ];
+
+        for (i = 0; i <= arabalar.length - 1; i++) {
+            console.log(arabalar[i].marka);
+        }
+
+        // ********************************** FATİH - UDEMY **********************************
+
+
+        var isim = "Buğra";
+        var yas = 27;
+        var gozRengi = "Kahve Rengi";
+
+        // İNSAN1 ADINDA OBJE OLUŞTURACAĞIZ.
+        var insan1 = {
+            isim: "Buğra",
+            soyisim: "Tan",
+            yas: 27,
+            gozRengi: "Kahve Rengi",
+        }
+
+        document.write(insan1.isim + " " + insan1.soyisim + " " + insan1["yas"] + "</br>");
+        document.write(insan1.isim.length + "</br>");
+
+        //****************************************************************************************
+
+        // İNSANLIK ADINA YAPI OLUŞTUR.
+
+        function insan(isim, yas, gozRengi) {
+
+            this.isim = isim;
+            this.yas = yas;
+            this.gozRengi = gozRengi;
+        }
+
+        var insan2 = new insan("Buğra",27,"Ela");
+        var insan1 = new insan("Ahmet", 18, "Kahverengi");
+
+        document.write(insan1.isim + " " + insan1.yas + " " + insan1.gozRengi); 
+
+    </script>
+</body>
+
+</html>
